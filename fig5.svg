@@ -26,12 +26,12 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="635.689"
-     inkscape:cy="459.61941"
+     inkscape:zoom="1"
+     inkscape:cx="510"
+     inkscape:cy="505"
      inkscape:window-width="1920"
      inkscape:window-height="1009"
-     inkscape:window-x="1912"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg358"
@@ -2403,6 +2403,28 @@
          height="720"
          id="rect8-6" />
     </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1046">
+      <rect
+         style="opacity:0.825617;fill:#550000;fill-opacity:0.715686;stroke:#aeaeae;stroke-width:7.22884;stroke-linejoin:round;stroke-miterlimit:0;paint-order:markers fill stroke"
+         id="rect1048"
+         width="435.5134"
+         height="351.44684"
+         x="117.61023"
+         y="360.29956" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1694">
+      <rect
+         style="opacity:0.825617;fill:#550000;fill-opacity:0.715686;stroke:#808080;stroke-width:9.51238;stroke-linejoin:round;stroke-miterlimit:0;stroke-dasharray:none;paint-order:markers fill stroke"
+         id="rect1696"
+         width="403.6535"
+         height="277.33252"
+         x="136.69701"
+         y="377.23492" />
+    </clipPath>
   </defs>
   <g
      style="fill:#000000;fill-opacity:1"
@@ -2458,7 +2480,7 @@
      style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect1626);display:inline;fill:#2b1100;fill-opacity:0.797333;stroke:#070707;stroke-width:1.83751;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="576.08398"
        y="522.4082"
-       id="tspan7421">
+       id="tspan3108">
 </tspan></text>
   <text
      xml:space="preserve"
@@ -2479,7 +2501,7 @@
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.0967px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="473.4256"
        y="388.51235"
-       id="tspan7423">Directional evolution</tspan></text>
+       id="tspan3110">Directional evolution</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-2.80278,-43.957336)"
@@ -2487,15 +2509,15 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:31.0967px;line-height:1.1;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324-3);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="612.75488"
        y="386.1801"
-       id="tspan7425">
+       id="tspan3112">
 </tspan><tspan
        x="526.77585"
        y="420.38646"
-       id="tspan7427"> Low variance
+       id="tspan3114"> Low variance
 </tspan><tspan
        x="536.58467"
        y="454.59282"
-       id="tspan7429">High degree</tspan></text>
+       id="tspan3116">High degree</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-162.68158,-63.6319)"
@@ -2505,19 +2527,19 @@
      y="0"><tspan
        x="468.86523"
        y="386.1801"
-       id="tspan7431">
+       id="tspan3118">
 </tspan><tspan
        x="468.86523"
        y="420.38646"
-       id="tspan7433">
+       id="tspan3120">
 </tspan><tspan
        x="468.86523"
        y="454.59282"
-       id="tspan7435">High variance
+       id="tspan3122">High variance
 </tspan><tspan
        x="468.86523"
        y="488.79917"
-       id="tspan7437">Low degree</tspan></text>
+       id="tspan3124">Low degree</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-112.23752,42.050894)"
@@ -2527,7 +2549,7 @@
      y="0"><tspan
        x="468.86523"
        y="386.1801"
-       id="tspan7439">Step size</tspan></text>
+       id="tspan3126">Step size</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-248.89283,-141.24628)"
@@ -2535,7 +2557,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.4239px;line-height:1.1;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324-3-2-69);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="602.32719"
        y="396.84186"
-       id="tspan7441">a</tspan></text>
+       id="tspan3128">a</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-247.3337,116.68193)"
@@ -2543,7 +2565,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.4239px;line-height:1.1;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324-3-2-69-6);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="603.57444"
        y="396.84186"
-       id="tspan7443">c</tspan></text>
+       id="tspan3130">c</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.45032128,0,0,0.45009503,-161.84513,-112.43579)"
@@ -2551,7 +2573,7 @@
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:31.0967px;font-family:Calibri;-inkscape-font-specification:'Calibri, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324-1);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
        x="475.31444"
        y="388.51235"
-       id="tspan7445">Random walk</tspan></text>
+       id="tspan3132">Random walk</tspan></text>
   <g
      id="g5643"
      transform="matrix(0.99669816,-0.52400455,0.70989482,0.73570668,-98.880789,90.688005)">
@@ -2704,7 +2726,7 @@
        style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:8px;font-family:Calibri;-inkscape-font-specification:'Calibri, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect1626-1);display:inline;fill:#2b1100;fill-opacity:0.797333;stroke:#070707;stroke-width:1.83751;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
          x="576.08398"
          y="522.4082"
-         id="tspan7447">
+         id="tspan3134">
 </tspan></text>
     <text
        xml:space="preserve"
@@ -2987,9 +3009,9 @@
      style="font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-orientation:sideways;white-space:pre;shape-inside:url(#rect466-59);display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="929.79481"
-       id="tspan7451"><tspan
+       id="tspan3138"><tspan
          style="font-size:48px;stroke:none"
-         id="tspan7449">Time (mya)</tspan></tspan></text>
+         id="tspan3136">Time (mya)</tspan></tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,-48.062804,213.04099)"
@@ -2997,7 +3019,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect466-4-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7453">100</tspan></text>
+       id="tspan3140">100</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,-109.23036,174.76776)"
@@ -3005,7 +3027,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect466-4-5-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7455">0.025</tspan></text>
+       id="tspan3142">0.025</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0,-0.41813938,0.41813938,0,-335.74662,768.46489)"
@@ -3015,14 +3037,14 @@
      y="0"><tspan
        x="512.37035"
        y="920.18673"
-       id="tspan7459"><tspan
+       id="tspan3146"><tspan
          style="stroke:none"
-         id="tspan7457">Rate of phenotypic diversification </tspan></tspan><tspan
+         id="tspan3144">Rate of phenotypic diversification </tspan></tspan><tspan
        x="670.13454"
        y="966.85336"
-       id="tspan7463"><tspan
+       id="tspan3150"><tspan
          style="stroke:none"
-         id="tspan7461">(step size/my)</tspan></tspan></text>
+         id="tspan3148">(step size/my)</tspan></tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,93.312975,213.04099)"
@@ -3030,7 +3052,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect10962-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7465">75</tspan></text>
+       id="tspan3152">75</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,230.5941,213.04099)"
@@ -3038,7 +3060,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11026-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7467">50</tspan></text>
+       id="tspan3154">50</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,367.92733,213.04099)"
@@ -3046,7 +3068,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11065-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7469">25</tspan></text>
+       id="tspan3156">25</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,510.00099,213.04099)"
@@ -3054,7 +3076,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11065-2-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7471">0</tspan></text>
+       id="tspan3158">0</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,-100.93805,101.50927)"
@@ -3062,7 +3084,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11137-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7473">0.05</tspan></text>
+       id="tspan3160">0.05</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,-109.23036,30.452045)"
@@ -3070,7 +3092,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11143-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7475">0.075</tspan></text>
+       id="tspan3162">0.075</tspan></text>
   <text
      xml:space="preserve"
      transform="matrix(0.39937939,0,0,0.39937939,-100.82156,-39.806467)"
@@ -3078,7 +3100,7 @@
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:37.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect11149-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.75273;stroke-linejoin:bevel;stroke-miterlimit:0;paint-order:markers fill stroke"><tspan
        x="489.08008"
        y="920.18673"
-       id="tspan7477">0.10</tspan></text>
+       id="tspan3164">0.10</tspan></text>
   <polyline
      points="83.30,656.73 85.45,656.70 87.61,656.67 89.76,656.64 91.92,656.61 94.07,656.58 96.23,656.54 98.38,656.51 100.54,656.48 102.69,656.44 104.85,656.41 107.00,656.37 109.16,656.34 111.31,656.30 113.47,656.26 115.62,656.22 117.78,656.18 119.93,656.14 122.09,656.10 124.24,656.06 126.40,656.01 128.55,655.97 130.71,655.93 132.86,655.88 135.02,655.83 137.17,655.79 139.33,655.74 141.48,655.69 143.64,655.64 145.79,655.59 147.94,655.54 150.10,655.48 152.25,655.43 154.41,655.37 156.56,655.32 158.72,655.26 160.87,655.20 163.03,655.14 165.18,655.08 167.34,655.02 169.49,654.96 171.65,654.89 173.80,654.83 175.96,654.76 178.11,654.69 180.27,654.62 182.42,654.55 184.58,654.48 186.73,654.40 188.89,654.32 191.04,654.25 193.20,654.17 195.35,654.08 197.51,654.00 199.66,653.92 201.82,653.83 203.97,653.74 206.13,653.65 208.28,653.55 210.44,653.46 212.59,653.36 214.75,653.26 216.90,653.15 219.06,653.05 221.21,652.94 223.37,652.83 225.52,652.71 227.67,652.60 229.83,652.48 231.98,652.36 234.14,652.23 236.29,652.11 238.45,651.98 240.60,651.84 242.76,651.71 244.91,651.57 247.07,651.43 249.22,651.28 251.38,651.13 253.53,650.98 255.69,650.83 257.84,650.67 260.00,650.51 262.15,650.34 264.31,650.18 266.46,650.01 268.62,649.83 270.77,649.66 272.93,649.48 275.08,649.29 277.24,649.11 279.39,648.92 281.55,648.73 283.70,648.53 285.86,648.34 288.01,648.13 290.17,647.93 292.32,647.73 294.48,647.52 296.63,647.31 298.79,647.09 300.94,646.88 303.10,646.66 305.25,646.44 307.40,646.21 309.56,645.99 311.71,645.76 313.87,645.53 316.02,645.30 318.18,645.07 320.33,644.83 322.49,644.60 324.64,644.36 326.80,644.12 328.95,643.88 331.11,643.64 333.26,643.39 335.42,643.15 337.57,642.91 339.73,642.66 341.88,642.41 344.04,642.17 346.19,641.92 348.35,641.67 350.50,641.42 352.66,641.17 354.81,640.92 356.97,640.67 359.12,640.42 361.28,640.17 363.43,639.92 365.59,639.67 367.74,639.42 369.90,639.17 372.05,638.91 374.21,638.66 376.36,638.41 378.52,638.16 380.67,637.91 382.83,637.66 384.98,637.41 387.14,637.15 389.29,636.90 391.44,636.65 393.60,636.40 395.75,636.15 397.91,635.89 400.06,635.64 402.22,635.38 404.37,635.13 406.53,634.87 408.68,634.61 410.84,634.36 412.99,634.10 415.15,633.84 417.30,633.57 419.46,633.31 421.61,633.04 423.77,632.77 425.92,632.50 428.08,632.23 430.23,631.95 432.39,631.68 434.54,631.39 436.70,631.11 438.85,630.82 441.01,630.53 443.16,630.23 445.32,629.93 447.47,629.62 449.63,629.31 451.78,629.00 453.94,628.67 456.09,628.35 458.25,628.01 460.40,627.67 462.56,627.33 464.71,626.97 466.87,626.61 469.02,626.25 471.17,625.87 473.33,625.49 475.48,625.09 477.64,624.69 479.79,624.29 481.95,623.87 484.10,623.44 486.26,623.00 488.41,622.55 490.57,622.09 492.72,621.62 494.88,621.14 497.03,620.65 499.19,620.14 501.34,619.63 503.50,619.10 505.65,618.56 507.81,618.01 509.96,617.44 512.12,616.86 514.27,616.27 516.43,615.66 518.58,615.04 520.74,614.40 522.89,613.75 525.05,613.09 527.20,612.41 529.36,611.72 531.51,611.01 533.67,610.28 535.82,609.54 537.98,608.79 540.13,608.01 542.29,607.23 544.44,606.42 546.60,605.60 548.75,604.77 550.90,603.91 553.06,603.04 555.21,602.16 557.37,601.25 559.52,600.34 561.68,599.40 563.83,598.44 565.99,597.48 568.14,596.48 570.30,595.48 572.45,594.46 574.61,593.42 576.76,592.37 578.92,591.29 581.07,590.21 583.23,589.10 585.38,587.98 587.54,586.84 589.69,585.68 591.85,584.51 594.00,583.33 596.16,582.12 598.31,580.90 600.47,579.66 602.62,578.41 604.78,577.14 606.93,575.86 609.09,574.56 611.24,573.25 613.40,571.92 615.55,570.58 617.71,569.22 619.86,567.85 622.02,566.47 624.17,565.07 626.33,563.65 628.48,562.23 630.64,560.80 632.79,559.35 634.94,557.89 637.10,556.42 639.25,554.94 641.41,553.45 643.56,551.95 645.72,550.45 647.87,548.93 650.03,547.41 652.18,545.88 654.34,544.35 656.49,542.81 658.65,541.26 660.80,539.72 662.96,538.17 665.11,536.61 667.27,535.06 669.42,533.51 671.58,531.96 673.73,530.41 675.89,528.87 678.04,527.33 680.20,525.80 682.35,524.28 684.51,522.76 686.66,521.26 688.82,519.76 690.97,518.28 693.13,516.82 695.28,515.37 697.44,513.94 699.59,512.53 701.75,511.13 703.90,509.77 706.06,508.43 708.21,507.10 710.37,505.82 712.52,504.56 714.67,503.34 716.83,502.15 718.98,500.99 721.14,499.87 723.29,498.79 725.45,497.74 727.60,496.76 729.76,495.80 731.91,494.90 734.07,494.05 736.22,493.23 738.38,492.49 740.53,491.79 742.69,491.13 744.84,490.56 747.00,490.02 749.15,489.55 751.31,489.15 753.46,488.80 755.62,488.53 757.77,488.31 759.93,488.15 762.08,488.09 764.24,488.07 766.39,488.13 768.55,488.27 770.70,488.45 772.86,488.74 775.01,489.09 777.17,489.49 779.32,490.00 781.48,490.55 783.63,491.19 785.79,491.91 787.94,492.68 790.10,493.55 792.25,494.48 794.41,495.47 796.56,496.55 798.71,497.68 800.87,498.90 803.02,500.18 805.18,501.50 807.33,502.93 809.49,504.40 811.64,505.93 813.80,507.54 815.95,509.19 818.11,510.91 820.26,512.68 822.42,514.49 824.57,516.38 826.73,518.30 828.88,520.26 831.04,522.28 833.19,524.33 835.35,526.43 837.50,528.57 839.66,530.72 841.81,532.93 843.97,535.16 846.12,537.41 848.28,539.69 850.43,541.99 852.59,544.31 854.74,546.65 856.90,548.99 859.05,551.35 861.21,553.72 863.36,556.09 865.52,558.46 867.67,560.84 869.83,563.21 871.98,565.58 874.14,567.94 876.29,570.29 878.44,572.62 880.60,574.95 882.75,577.25 884.91,579.55 887.06,581.81 889.22,584.05 891.37,586.28 893.53,588.47 895.68,590.64 897.84,592.78 899.99,594.88 902.15,596.96 904.30,599.00 906.46,601.01 908.61,602.98 910.77,604.91 912.92,606.81 915.08,608.66 917.23,610.48 919.39,612.27 921.54,613.99 923.70,615.69 925.85,617.35 928.01,618.95 930.16,620.53 932.32,622.06 934.47,623.54 936.63,624.99 938.78,626.38 940.94,627.75 943.09,629.07 945.25,630.34 947.40,631.58 949.56,632.77 951.71,633.92 953.87,635.04 956.02,636.11 958.17,637.14 960.33,638.14 962.48,639.10 964.64,640.03 966.79,640.91 968.95,641.76 971.10,642.59 973.26,643.36 975.41,644.12 977.57,644.84 979.72,645.52 981.88,646.18 984.03,646.81 986.19,647.40 988.34,647.98 990.50,648.52 992.65,649.04 994.81,649.54 996.96,650.00 999.12,650.45 1001.27,650.87 1003.43,651.27 1005.58,651.66 1007.74,652.02 1009.89,652.36 1012.05,652.68 1014.20,652.99 1016.36,653.28 1018.51,653.55 1020.67,653.81 1022.82,654.05 1024.98,654.28 1027.13,654.49 1029.29,654.70 1031.44,654.88 1033.60,655.07 1035.75,655.23 1037.91,655.39 1040.06,655.54 1042.21,655.67 1044.37,655.80 1046.52,655.92 1048.68,656.04 1050.83,656.14 1052.99,656.24 1055.14,656.33 1057.30,656.42 1059.45,656.50 1061.61,656.57 1063.76,656.64 1065.92,656.70 1068.07,656.76 1070.23,656.82 1072.38,656.87 1074.54,656.92 1076.69,656.96 1078.85,657.00 1081.00,657.04 1083.16,657.07 1085.31,657.11 1087.47,657.14 1089.62,657.16 1091.78,657.19 1093.93,657.21 1096.09,657.23 1098.24,657.25 1100.40,657.27 1102.55,657.29 1104.71,657.30 1106.86,657.32 1109.02,657.33 1111.17,657.34 1113.33,657.35 1115.48,657.36 1117.64,657.37 1119.79,657.38 1121.94,657.39 1124.10,657.39 1126.25,657.40 1128.41,657.40 1130.56,657.41 1132.72,657.41 1134.87,657.42 1137.03,657.42 1139.18,657.43 1141.34,657.43 1143.49,657.43 1145.65,657.43 1147.80,657.44 1149.96,657.44 1152.11,657.44 1154.27,657.44 1156.42,657.44 1158.58,657.44 1160.73,657.45 1162.89,657.45 1165.04,657.45 1167.20,657.45 1169.35,657.45 1171.51,657.45 1173.66,657.45 1175.82,657.45 1177.97,657.45 1180.13,657.45 1182.28,657.45 1184.44,657.45 "
      style="opacity:0.586354;fill:#e6b800;fill-opacity:1;stroke:#000000;stroke-width:3.79316;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10"
@@ -3117,9 +3139,9 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                  x="-205.21094"
                  y="-63.775142"
-                 id="tspan7481"><tspan
+                 id="tspan3168"><tspan
                    style="opacity:0"
-                   id="tspan7479">Density</tspan></tspan></text>
+                   id="tspan3166">Density</tspan></tspan></text>
           </g>
           <text
              xml:space="preserve"
@@ -3128,7 +3150,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.4239px;line-height:1.1;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect324-3-2-69-8);display:inline;fill:#000000;fill-opacity:0.797333;stroke:none;stroke-width:1.8889;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"><tspan
                x="601.29685"
                y="396.84186"
-               id="tspan7483">b</tspan></text>
+               id="tspan3170">b</tspan></text>
           <g
              clip-path="url(#cpMC4wMHwxMjk2LjAwfDAuMDB8NzIwLjAw)"
              id="g128"
@@ -3146,7 +3168,7 @@
                xml:space="preserve"><tspan
                  x="83.360001"
                  y="699.73999"
-                 id="tspan7485">0</tspan></text>
+                 id="tspan3172">0</tspan></text>
             <text
                x="83.360001"
                y="699.73999"
@@ -3159,7 +3181,7 @@
                xml:space="preserve"><tspan
                  x="83.360001"
                  y="699.73999"
-                 id="tspan7487">2</tspan></text>
+                 id="tspan3174">2</tspan></text>
             <text
                x="83.360001"
                y="699.73999"
@@ -3172,7 +3194,7 @@
                xml:space="preserve"><tspan
                  x="83.360001"
                  y="699.73999"
-                 id="tspan7489">4</tspan></text>
+                 id="tspan3176">4</tspan></text>
             <text
                xml:space="preserve"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.5946px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;opacity:0.63;fill:#f2db7d;fill-opacity:1;stroke-width:2.07846;stroke-linecap:square;stroke-miterlimit:0;stroke-opacity:0.882353;paint-order:stroke fill markers"
@@ -3204,7 +3226,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697-5-5);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                  x="-205.21094"
                  y="-67.355617"
-                 id="tspan7491">Corbiculate bees</tspan></text>
+                 id="tspan3178">Corbiculate bees</tspan></text>
             <text
                xml:space="preserve"
                transform="matrix(0.75,0,0,0.75,806.55142,259.37408)"
@@ -3212,7 +3234,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697-5-5-8);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                  x="-205.21094"
                  y="-63.775142"
-                 id="tspan7493">Remaining lineages</tspan></text>
+                 id="tspan3180">Remaining lineages</tspan></text>
           </g>
           <g
              clip-path="url(#cpMC4wMHwxMDA4LjAwfDAuMDB8NzIwLjAw)"
@@ -3235,7 +3257,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697-52);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                x="-205.21094"
                y="-63.775142"
-               id="tspan7495">Degree (radians)</tspan></text>
+               id="tspan3182">Degree (radians)</tspan></text>
           <g
              id="g7780-5"
              transform="translate(-543.31546,456.99776)">
@@ -3246,7 +3268,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697-0);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                  x="-205.21094"
                  y="-63.775142"
-                 id="tspan7497">Phenotypic space 2</tspan></text>
+                 id="tspan3184">Phenotypic space 2</tspan></text>
           </g>
           <text
              xml:space="preserve"
@@ -3255,7 +3277,7 @@
              style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:28.6438px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect697-52-6);display:inline;fill:#000000;stroke:none;stroke-width:0.869948;stroke-linecap:square;stroke-dashoffset:0.566929;paint-order:markers stroke fill"><tspan
                x="-205.21094"
                y="-63.775142"
-               id="tspan7499">Phenotypic space 1</tspan></text>
+               id="tspan3186">Phenotypic space 1</tspan></text>
           <g
              id="g8514"
              transform="matrix(2.2251688,0,0,2.2251688,-483.76484,-281.73884)"
@@ -3267,7 +3289,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7501">π
+                 id="tspan3188">π
 </tspan></text>
             <text
                xml:space="preserve"
@@ -3276,11 +3298,11 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7503">_
+                 id="tspan3190">_
 </tspan><tspan
                  x="83.876953"
                  y="391.70904"
-                 id="tspan7505">2
+                 id="tspan3192">2
 </tspan></text>
           </g>
           <g
@@ -3294,7 +3316,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7507">3π
+                 id="tspan3194">3π
 </tspan></text>
             <text
                xml:space="preserve"
@@ -3303,11 +3325,11 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-6-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7509">__
+                 id="tspan3196">__
 </tspan><tspan
                  x="83.876953"
                  y="391.70904"
-                 id="tspan7511"> 4
+                 id="tspan3198"> 4
 </tspan></text>
           </g>
           <g
@@ -3321,7 +3343,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-3-7);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7513">π
+                 id="tspan3200">π
 </tspan></text>
           </g>
           <polygon
@@ -3398,7 +3420,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-3-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7515">5π
+                 id="tspan3202">5π
 </tspan></text>
             <text
                xml:space="preserve"
@@ -3407,11 +3429,11 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.2299px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect1657-7-1-5-6-9-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.390961;stroke-linecap:square;stroke-dashoffset:0.566929;stroke-opacity:1;paint-order:markers stroke fill"><tspan
                  x="83.876953"
                  y="378.92166"
-                 id="tspan7517">__
+                 id="tspan3204">__
 </tspan><tspan
                  x="83.876953"
                  y="391.70904"
-                 id="tspan7519"> 4
+                 id="tspan3206"> 4
 </tspan></text>
             <text
                xml:space="preserve"
@@ -3553,6 +3575,12 @@
      id="path5740"
      style="fill:#808080;fill-opacity:0.715686;stroke:none;stroke-width:0.0406017;stroke-dasharray:none;stroke-opacity:1"
      sodipodi:nodetypes="csssssssssssssc" />
+  <polyline
+     points="152.60,402.99 153.87,402.99 155.14,402.99 156.41,402.99 157.68,402.99 158.95,402.99 160.22,402.99 161.50,402.99 162.77,402.99 164.04,402.99 165.31,402.99 166.58,402.99 167.85,402.99 169.12,402.99 170.39,402.99 171.67,402.99 172.94,402.99 174.21,402.99 175.48,402.99 176.75,402.99 178.02,402.99 179.29,402.99 180.56,402.99 181.84,402.99 183.11,402.99 184.38,402.99 185.65,402.99 186.92,402.99 188.19,402.99 189.46,402.99 190.73,402.99 192.01,402.99 193.28,402.99 194.55,402.99 195.82,402.99 197.09,402.99 198.36,402.99 199.63,402.99 200.91,402.99 202.18,402.99 203.45,402.99 204.72,402.99 205.99,402.99 207.26,402.99 208.53,402.99 209.80,402.99 211.08,402.99 212.35,402.99 213.62,402.99 214.89,402.99 216.16,402.99 217.43,402.99 218.70,402.99 219.97,402.99 221.25,402.99 222.52,402.99 223.79,402.99 225.06,507.75 226.33,507.75 227.60,507.75 228.87,507.75 230.14,507.75 231.42,507.75 232.69,507.75 233.96,507.75 235.23,507.75 236.50,507.75 237.77,507.75 239.04,507.75 240.31,507.75 241.59,507.75 242.86,507.75 244.13,507.75 245.40,507.75 246.67,507.75 247.94,507.75 249.21,507.75 250.48,507.75 251.76,507.75 253.03,507.75 254.30,507.75 255.57,507.75 256.84,507.75 258.11,507.75 259.38,507.75 260.65,507.75 261.93,507.75 263.20,507.75 264.47,507.75 265.74,507.75 267.01,507.75 268.28,507.75 269.55,507.75 270.82,507.75 272.10,507.75 273.37,507.75 274.64,507.75 275.91,507.75 277.18,507.75 278.45,507.75 279.72,507.75 281.00,507.75 282.27,507.75 283.54,507.75 284.81,507.75 286.08,540.81 287.35,540.81 288.62,540.81 289.89,540.81 291.17,540.81 292.44,540.81 293.71,540.81 294.98,540.81 296.25,540.81 297.52,540.81 298.79,540.81 300.06,540.81 301.34,540.81 302.61,540.81 303.88,540.81 305.15,540.81 306.42,540.81 307.69,540.81 308.96,540.81 310.23,540.81 311.51,540.81 312.78,540.81 314.05,540.81 315.32,540.81 316.59,540.81 317.86,540.81 319.13,540.81 320.40,540.81 321.68,540.81 322.95,540.81 324.22,540.81 325.49,540.81 326.76,540.81 328.03,540.81 329.30,540.81 330.57,540.81 331.85,540.81 333.12,540.81 334.39,540.81 335.66,540.81 336.93,540.81 338.20,540.81 339.47,540.81 340.74,540.81 342.02,540.81 343.29,540.81 344.56,540.81 345.83,540.81 347.10,540.81 348.37,540.81 349.64,540.81 350.91,540.81 352.19,540.81 353.46,540.81 354.73,540.81 356.00,540.81 357.27,540.81 358.54,540.81 359.81,540.81 361.08,540.81 362.36,540.81 363.63,540.81 364.90,545.28 366.17,545.28 367.44,545.28 368.71,545.28 369.98,545.28 371.26,545.28 372.53,545.28 373.80,545.28 375.07,545.28 376.34,545.28 377.61,545.28 378.88,545.28 380.15,545.28 381.43,545.28 382.70,545.28 383.97,545.28 385.24,545.28 386.51,545.28 387.78,545.28 389.05,545.28 390.32,545.28 391.60,545.28 392.87,545.28 394.14,545.28 395.41,545.28 396.68,545.28 397.95,545.28 399.22,545.28 400.49,545.28 401.77,545.28 403.04,545.28 404.31,565.54 405.58,565.54 406.85,565.54 408.12,565.54 409.39,565.54 410.66,565.54 411.94,565.54 413.21,565.54 414.48,565.54 415.75,565.54 417.02,565.54 418.29,565.54 419.56,565.54 420.83,565.54 422.11,565.54 423.38,565.54 424.65,565.54 425.92,565.54 427.19,565.54 428.46,565.54 429.73,565.54 431.00,565.54 432.28,565.54 433.55,565.54 434.82,565.54 436.09,565.54 437.36,565.54 438.63,565.54 439.90,565.54 441.17,565.54 442.45,565.54 443.72,565.54 444.99,565.54 446.26,565.54 447.53,565.54 448.80,565.54 450.07,565.54 451.35,565.54 452.62,565.54 453.89,565.54 455.16,565.54 456.43,565.54 457.70,565.54 458.97,565.54 460.24,565.54 461.52,565.54 462.79,565.54 464.06,565.54 465.33,565.54 466.60,565.54 467.87,565.54 469.14,565.54 470.41,565.54 471.69,565.54 472.96,565.54 474.23,565.54 475.50,565.54 476.77,565.54 478.04,565.54 479.31,565.54 480.58,565.54 481.86,565.54 483.13,565.54 484.40,565.54 485.67,565.54 486.94,565.54 488.21,565.54 489.48,565.54 490.75,565.54 492.03,565.54 493.30,565.54 494.57,565.54 495.84,565.54 497.11,565.54 498.38,565.54 499.65,565.54 500.92,565.54 502.20,565.54 503.47,565.54 504.74,565.54 506.01,565.54 507.28,565.54 508.55,565.54 509.82,565.54 511.09,565.54 512.37,565.54 513.64,565.54 514.91,594.22 516.18,594.22 517.45,594.22 518.72,594.22 519.99,594.22 521.26,594.22 522.54,594.22 523.81,594.22 525.08,594.22 526.35,594.22 527.62,594.22 528.89,594.22 530.16,594.22 531.43,594.22 532.71,594.22 533.98,594.22 535.25,594.22 536.52,594.22 537.79,594.22 539.06,555.82 540.33,555.82 541.61,555.82 542.88,555.82 544.15,555.82 545.42,555.82 546.69,555.82 547.96,555.82 549.23,555.82 550.50,35.80 551.78,35.80 553.05,35.80 554.32,35.80 555.59,35.80 556.86,35.80 558.13,35.80 559.40,35.80 560.67,35.80 561.95,35.80 563.22,35.80 564.49,35.80 565.76,35.80 567.03,35.80 568.30,35.80 569.57,35.80 570.84,35.80 572.12,35.80 573.39,35.80 574.66,35.80 575.93,35.80 577.20,35.80 578.47,35.80 579.74,35.80 581.01,35.80 582.29,35.80 583.56,35.80 584.83,35.80 586.10,35.80 587.37,35.80 588.64,35.80 589.91,35.80 591.18,35.80 592.46,35.80 593.73,35.80 595.00,286.07 596.27,286.07 597.54,286.07 598.81,286.07 600.08,286.07 601.35,286.07 602.63,286.07 603.90,286.07 605.17,286.07 606.44,286.07 607.71,286.07 608.98,286.07 610.25,286.07 611.52,286.07 612.80,286.07 614.07,286.07 615.34,286.07 616.61,286.07 617.88,286.07 619.15,286.07 620.42,286.07 621.69,286.07 622.97,286.07 624.24,286.07 625.51,286.07 626.78,286.07 628.05,286.07 629.32,286.07 630.59,286.07 631.87,286.07 633.14,286.07 634.41,286.07 635.68,286.07 636.95,286.07 638.22,286.07 639.49,286.07 640.76,286.07 642.04,286.07 643.31,286.07 644.58,286.07 645.85,286.07 647.12,286.07 648.39,286.07 649.66,286.07 650.93,286.07 652.21,286.07 653.48,286.07 654.75,286.07 656.02,286.07 657.29,286.07 658.56,286.07 659.83,286.07 661.10,286.07 662.38,286.07 663.65,286.07 664.92,286.07 666.19,286.07 667.46,286.07 668.73,286.07 670.00,286.07 671.27,286.07 672.55,286.07 673.82,286.07 675.09,286.07 676.36,286.07 677.63,286.07 678.90,286.07 680.17,286.07 681.44,286.07 682.72,286.07 683.99,286.07 685.26,286.07 686.53,286.07 687.80,286.07 689.07,286.07 690.34,286.07 691.61,286.07 692.89,286.07 694.16,286.07 695.43,286.07 696.70,286.07 697.97,286.07 699.24,286.07 700.51,286.07 701.78,286.07 703.06,286.07 704.33,286.07 705.60,286.07 706.87,286.07 708.14,286.07 709.41,286.07 710.68,286.07 711.96,286.07 713.23,286.07 714.50,286.07 715.77,286.07 717.04,286.07 718.31,286.07 719.58,286.07 720.85,286.07 722.13,286.07 723.40,286.07 724.67,359.82 725.94,359.82 727.21,359.82 728.48,359.82 729.75,359.82 731.02,359.82 732.30,359.82 733.57,359.82 734.84,359.82 736.11,359.82 737.38,359.82 738.65,359.82 739.92,359.82 741.19,359.82 742.47,359.82 743.74,359.82 745.01,359.82 746.28,359.82 747.55,359.82 748.82,359.82 750.09,359.82 751.36,359.82 752.64,359.82 753.91,359.82 755.18,359.82 756.45,359.82 757.72,359.82 758.99,359.82 760.26,359.82 761.53,359.82 762.81,359.82 764.08,359.82 765.35,359.82 766.62,359.82 767.89,359.82 769.16,359.82 770.43,359.82 771.70,359.82 772.98,359.82 774.25,359.82 775.52,359.82 776.79,359.82 778.06,359.82 779.33,359.82 780.60,359.82 781.87,359.82 783.15,359.82 784.42,359.82 785.69,359.82 786.96,359.82 788.23,359.82 789.50,359.82 790.77,359.82 792.04,359.82 793.32,359.82 794.59,359.82 795.86,359.82 797.13,359.82 798.40,359.82 799.67,359.82 800.94,359.82 802.22,359.82 803.49,359.82 804.76,359.82 806.03,359.82 807.30,359.82 808.57,359.82 809.84,359.82 811.11,359.82 812.39,359.82 813.66,359.82 814.93,359.82 816.20,359.82 817.47,359.82 818.74,359.82 820.01,359.82 821.28,359.82 822.56,359.82 823.83,359.82 825.10,359.82 826.37,359.82 827.64,359.82 828.91,359.82 830.18,359.82 831.45,359.82 832.73,359.82 834.00,359.82 835.27,359.82 836.54,359.82 837.81,359.82 839.08,359.82 840.35,359.82 841.62,359.82 842.90,359.82 844.17,359.82 845.44,359.82 846.71,359.82 847.98,359.82 849.25,359.82 850.52,359.82 851.79,359.82 853.07,359.82 854.34,359.82 855.61,359.82 856.88,359.82 858.15,359.82 859.42,359.82 860.69,359.82 861.96,359.82 863.24,359.82 864.51,359.82 865.78,359.82 867.05,359.82 868.32,359.82 869.59,359.82 870.86,359.82 872.13,359.82 873.41,359.82 874.68,359.82 875.95,359.82 877.22,359.82 878.49,359.82 879.76,359.82 881.03,359.82 882.30,359.82 883.58,359.82 884.85,359.82 886.12,359.82 887.39,359.82 888.66,359.82 889.93,359.82 891.20,359.82 892.48,359.82 893.75,359.82 895.02,359.82 896.29,359.82 897.56,359.82 898.83,359.82 900.10,359.82 901.37,359.82 902.65,359.82 903.92,359.82 905.19,359.82 906.46,359.82 907.73,359.82 909.00,359.82 910.27,359.82 911.54,359.82 912.82,359.82 914.09,359.82 915.36,359.82 916.63,359.82 917.90,359.82 919.17,359.82 920.44,359.82 921.71,359.82 922.99,359.82 924.26,359.82 925.53,359.82 926.80,359.82 928.07,359.82 929.34,359.82 930.61,359.82 931.88,359.82 933.16,359.82 934.43,359.82 935.70,359.82 936.97,359.82 938.24,359.82 939.51,359.82 940.78,359.82 942.05,359.82 943.33,359.82 944.60,359.82 945.87,359.82 947.14,359.82 948.41,359.82 949.68,359.82 950.95,359.82 952.22,359.82 953.50,359.82 954.77,359.82 956.04,359.82 957.31,359.82 958.58,359.82 959.85,359.82 961.12,359.82 962.39,359.82 963.67,359.82 964.94,359.82 966.21,359.82 967.48,359.82 968.75,359.82 970.02,359.82 971.29,359.82 972.57,359.82 973.84,359.82 975.11,359.82 976.38,359.82 977.65,359.82 978.92,359.82 980.19,359.82 981.46,359.82 982.74,359.82 984.01,359.82 985.28,359.82 986.55,359.82 987.82,359.82 989.09,359.82 990.36,359.82 991.63,359.82 992.91,359.82 994.18,359.82 995.45,359.82 996.72,359.82 997.99,359.82 999.26,359.82 1000.53,359.82 1001.80,359.82 1003.08,359.82 1004.35,359.82 1005.62,359.82 1006.89,359.82 1008.16,359.82 1009.43,359.82 1010.70,359.82 1011.97,359.82 1013.25,359.82 1014.52,359.82 1015.79,359.82 1017.06,359.82 1018.33,359.82 1019.60,359.82 1020.87,359.82 1022.14,359.82 1023.42,359.82 1024.69,359.82 1025.96,359.82 1027.23,359.82 1028.50,359.82 1029.77,359.82 1031.04,381.00 1032.31,381.00 1033.59,381.00 1034.86,381.00 1036.13,381.00 1037.40,381.00 1038.67,381.00 1039.94,381.00 1041.21,381.00 1042.48,381.00 1043.76,381.00 1045.03,381.00 1046.30,381.00 1047.57,381.00 1048.84,418.05 1050.11,418.05 1051.38,418.05 1052.65,418.05 1053.93,418.05 1055.20,418.05 1056.47,418.05 1057.74,418.05 1059.01,418.05 1060.28,418.05 1061.55,418.05 1062.83,418.05 1064.10,418.05 1065.37,418.05 1066.64,418.05 1067.91,418.05 1069.18,418.05 1070.45,418.05 1071.72,418.05 1073.00,418.05 1074.27,418.05 1075.54,418.05 1076.81,418.05 1078.08,418.05 1079.35,418.05 1080.62,418.05 1081.89,418.05 1083.17,418.05 1084.44,418.05 1085.71,418.05 1086.98,418.05 1088.25,418.05 1089.52,418.05 1090.79,418.05 1092.06,418.05 1093.34,418.05 1094.61,418.05 1095.88,418.05 1097.15,418.05 1098.42,418.05 1099.69,418.05 1100.96,418.05 1102.23,418.05 1103.51,418.05 1104.78,418.05 1106.05,418.05 1107.32,418.05 1108.59,418.05 1109.86,418.05 1111.13,418.05 1112.40,418.05 1113.68,335.45 1114.95,335.45 1116.22,335.45 1117.49,335.45 1118.76,335.45 1120.03,335.45 1121.30,335.45 1122.57,335.45 1123.85,376.55 1125.12,376.55 1126.39,376.55 1127.66,376.55 1128.93,376.55 1130.20,376.55 1131.47,376.55 1132.74,376.55 1134.02,376.55 1135.29,376.55 1136.56,376.55 1137.83,375.09 1139.10,375.09 1140.37,375.09 1141.64,375.09 1142.91,375.09 1144.19,375.09 1145.46,375.09 1146.73,375.09 1148.00,375.09 1149.27,375.09 1150.54,375.09 1151.81,385.69 1153.09,414.20 1154.36,414.20 1155.63,414.20 1156.90,442.72 1158.17,442.72 1159.44,456.64 1160.71,456.64 1161.98,456.64 1163.26,456.64 1164.53,456.64 1165.80,456.64 1167.07,456.64 1168.34,456.64 1169.61,456.64 1170.88,456.64 1172.15,456.64 1173.43,456.64 1174.70,456.64 1175.97,456.64 1177.24,456.64 1178.51,456.64 1179.78,456.64 1181.05,456.64 1182.32,456.64 1183.60,480.66 1184.87,480.66 1186.14,480.66 1187.41,480.66 1188.68,480.66 1189.95,480.66 1191.22,480.66 1192.49,480.66 1193.77,480.66 1195.04,480.66 1196.31,480.66 1197.58,480.66 1198.85,480.66 1200.12,444.77 1201.39,444.77 1202.66,444.77 1203.94,444.77 1205.21,444.77 1206.48,444.77 1207.75,462.83 1209.02,462.83 1210.29,483.43 1211.56,483.43 1212.83,483.43 1214.11,499.46 1215.38,499.46 1216.65,499.46 1217.92,496.83 1219.19,496.83 1220.46,492.84 1221.73,492.84 1223.00,492.84 1224.28,492.84 1225.55,492.84 1226.82,492.84 1228.09,492.84 1229.36,492.84 1230.63,462.85 1231.90,462.85 1233.18,462.85 1234.45,453.98 1235.72,438.05 1236.99,438.05 1238.26,438.05 1239.53,438.05 1240.80,438.05 1242.07,449.76 1243.35,449.76 1244.62,461.79 1245.89,462.11 1247.16,462.11 1248.43,462.11 1249.70,462.11 1250.97,467.24 1252.24,467.24 1253.52,472.20 1254.79,472.98 1256.06,472.98 1257.33,472.98 1258.60,472.98 1259.87,472.98 1261.14,472.37 1262.41,472.37 1263.69,479.17 1264.96,479.17 1266.23,479.17 1267.50,479.17 1268.77,479.17 1270.04,479.17 1271.31,485.00 1272.58,485.00 1273.86,485.00 1275.13,485.00 1276.40,491.64 1277.67,491.64 1278.94,449.13 1280.21,449.13 1281.48,449.13 1282.75,449.13 1284.03,449.13 1285.30,422.58 1286.57,422.58 1287.84,422.58 1289.11,423.35 1290.38,423.35 1291.65,423.35 1292.92,423.35 1294.20,423.35 1295.47,423.35 1296.74,423.35 1298.01,423.35 1299.28,423.35 1300.55,423.35 1301.82,423.35 1303.09,430.85 1304.37,430.85 1305.64,399.42 1306.91,378.47 1308.18,378.47 1309.45,378.47 1310.72,378.47 1311.99,378.47 1313.26,378.47 1314.54,378.47 1315.81,378.47 1317.08,378.47 1318.35,369.27 1319.62,369.27 1320.89,375.99 1322.16,375.99 1323.44,375.99 1324.71,375.99 1325.98,379.47 1327.25,379.47 1328.52,379.47 1329.79,379.47 1331.06,379.47 1332.33,382.76 1333.61,382.76 1334.88,382.76 1336.15,382.76 1337.42,382.76 1338.69,368.40 1339.96,368.40 1341.23,376.16 1342.50,376.16 1343.78,357.93 1345.05,357.93 1346.32,357.93 1347.59,357.93 1348.86,360.02 1350.13,360.02 1351.40,360.02 1352.67,360.02 1353.95,360.02 1355.22,329.58 1356.49,316.93 1357.76,316.93 1359.03,316.93 1360.30,316.93 1361.57,316.93 1362.84,316.93 1364.12,316.93 1365.39,316.93 1366.66,316.93 1367.93,316.93 1369.20,316.93 1370.47,316.93 1371.74,316.93 1373.01,316.93 1374.29,316.93 1375.56,316.93 1376.83,316.93 1378.10,316.93 1379.37,316.93 1380.64,316.93 1381.91,316.93 1383.18,316.93 1384.46,277.16 1385.73,277.16 1387.00,277.16 1388.27,277.16 1389.54,277.16 1390.81,277.16 1392.08,277.16 1393.35,277.16 1394.63,277.16 1395.90,277.16 1397.17,277.16 1398.44,277.16 1399.71,277.16 1400.98,277.16 1402.25,277.16 1403.53,277.16 1404.80,277.16 1406.07,277.16 1407.34,277.16 1408.61,277.16 1409.88,235.52 "
+     style="fill:none;stroke:#808080;stroke-width:9.51239;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:0.937255"
+     id="polyline54-6-5"
+     transform="matrix(0.43224846,0,0,0.41400288,93.91316,287.70995)"
+     clip-path="url(#clipPath1694)" />
   <g
      id="g2916"
      transform="translate(399.00222,98.202056)">
