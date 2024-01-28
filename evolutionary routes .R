@@ -241,9 +241,6 @@ new <- transform(new, step = vector_length / edge_length)
 names(new)[names(new) == "V10"] <- "step"
 
 
-# Replace edge_length values of 0 with 1
-# new$edge_length[new$edge_length == 0] <- 1
-
 # Optimized replicate_steps_with_group function
 replicate_steps_with_group <- function(species_id, df) {
   species_data <- subset(df, species == species_id)
@@ -258,6 +255,7 @@ replicate_steps_with_group <- function(species_id, df) {
 # Create the new DataFrame using lapply and do.call
 new_df <- do.call(rbind, lapply(unique(new$species), function(species_id) replicate_steps_with_group(species_id, new)))
 
+split=(round(100-branching.times(tree)["88"][1],1))*10
 
 # Calculate sequence and average step
 new_df <- new_df %>%
@@ -265,32 +263,37 @@ new_df <- new_df %>%
   mutate(sequence = row_number()) %>%
   ungroup()
 
-avg_step_df <- new_df %>%
+
+filtered_df <- new_df %>%
+  group_by(sequence) %>%
+  filter(!duplicated(step)) %>%
+  ungroup()
+
+
+
+all_species <- filtered_df %>%
+  filter(sequence <= split) %>%
+  group_by(sequence) %>%
+  summarize(average_step = mean(step, na.rm = TRUE))
+
+# Join the average steps with the original data frame and update the step values
+result_df <- filtered_df %>%
+  left_join(all_species, by = "sequence") %>%
+  mutate(step = ifelse(sequence <= split, average_step, step)) %>%
+  select(-average_step)  # Remove the average_step column after updating
+
+
+
+avg_step_df <- result_df %>%
   group_by(combined_group, sequence) %>%
   summarize(avg_step = mean(step), .groups = 'drop')
 
-split=(round(100-branching.times(tree)["88"][1],1))*10
 
-average_step_per_sequence <- avg_step_df %>%
-  group_by(sequence) %>%
-  summarize(aveg_step = mean(avg_step)) %>%
-  ungroup()
-
-# Joining the data frames on the sequence column
-updated_avg_step_df <- avg_step_df %>%
-  left_join(average_step_per_sequence, by = "sequence")
-
-# Conditional replacement of avg_step values for sequence 1 to 31
-updated_avg_step_df <- updated_avg_step_df %>%
-  mutate(avg_step = ifelse(sequence >= 1 & sequence <= split, aveg_step, avg_step)) %>%
-  select(-aveg_step)  # Optionally remove the extra column after replacement
-
-
-steps23 = updated_avg_step_df
+steps23 = avg_step_df
 
 
 # Plotting
-ggplot(updated_avg_step_df, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
+ggplot(avg_step_df, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
   geom_line() +
   theme_minimal() +
   labs( x = "Sequence",
@@ -318,108 +321,6 @@ p=ggplot(avg_step_all, aes(x = sequence, y = avg_step, group = combined_group, c
 
 
 ggsave(p,height = 10,width = 22,filename = "divergence.svg")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-tail(steps12)
-
-
-
-
-
-
-
-
-
-
-library(picante)
-
-
-x = match.phylo.data(phy = tree,data = data)$data
-groupvec=x$opt2
-
-name = rownames(match.phylo.data(phy = tree,data = data)$data)
-
-
-
-samp <- matrix(0, nrow = 2, ncol = length(name), dimnames = list(c("A", "B"), name))
-
-# Populate the community matrix
-for (i in 1:length(name)) {
-  group <- groupvec[i]
-  samp[group, name[i]] <- 1
-}
-
-
-dist.tree <- cophenetic.phylo(tree)
-
-###B=superorganism
-result = ses.mpd(samp = samp, dis = dist.tree)
-
-
-n_A = choose(n = result$ntaxa[1],k = 2)
-n_B = choose(n = result$ntaxa[2],k = 2)
-
-param_A = result$mpd.obs[1]/n_A
-param_B = result$mpd.obs[2]/n_B
-
-
-
-#superorganisms
-0.68/param_B
-#simple
-0.87/param_A
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
