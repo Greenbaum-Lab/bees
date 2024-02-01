@@ -80,7 +80,7 @@ vec_creator <- function(dat, index, phy, species = "M.rotundata") {
   return(x)
 }
 
-index = c(2,3)
+index = c(3,4)
 # make vectors of axis x and y
 x <- vec_creator(dat, index[1], phy)
 y <- vec_creator(dat, index[2], phy)
@@ -143,16 +143,79 @@ ggplot()+
 
 
 
-############size of steps
-# Calculate vector lengths for each species
 
-df_with_vectors <- demo %>%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# demo12=demo
+# demo34=demo
+
+demo = cbind(demo12[,c(1,3)],demo34[,c(1,3)],demo12[,c(2,4)])
+colnames(demo) = c("PC1","PC2","PC3","PC4","species","group")
+
+demo <- demo %>%
   arrange(species) %>%
   group_by(species) %>%
-  mutate(dx = lead(x) - x, dy = lead(y) - y,
-         vector_length = sqrt(dx^2 + dy^2)) %>%
-  slice(-n()) %>%
   mutate(combined_group = ifelse(group %in% c("api", "bom", "mel"), "super", "simple"))
+
+# Function to calculate the Euclidean distance between two points
+calc_distance <- function(row1, row2) {
+  sqrt(sum((row1 - row2) ^ 2))
+}
+
+
+# Function to calculate sequential distances within a species group
+calc_sequential_distances <- function(species_data) {
+  # Initialize an empty data frame to store results
+  results <- tibble(FromRow = integer(),
+                    ToRow = integer(),
+                    Distance = numeric(),
+                    Group = character(),
+                    CombinedGroup = character())
+  
+  if(nrow(species_data) > 1) {
+    for (i in 1:(nrow(species_data) - 1)) {
+      distance <- calc_distance(species_data[i, c("PC1", "PC2", "PC3", "PC4")], species_data[i+1, c("PC1", "PC2", "PC3", "PC4")])
+      new_row <- tibble(FromRow = i,
+                        ToRow = i + 1,
+                        Distance = distance,
+                        Group = as.character(species_data$group[i]),
+                        CombinedGroup = ifelse("combined_group" %in% names(species_data), as.character(species_data$combined_group[i]), NA_character_))
+      results <- bind_rows(results, new_row)
+    }
+  }
+  
+  return(results)
+}
+
+# Calculate sequential distances for each species, ensuring group values are tracked
+results <- demo %>%
+  group_by(species) %>%
+  do(calc_sequential_distances(.)) %>%
+  ungroup()
+
+# Display the results
+print(results)
+
+
+
 
 
 # Extract the edge matrix and edge lengths
@@ -228,17 +291,17 @@ all_lengths_vector <- unlist(lapply(seq_len(nrow(all_species_paths_df)), functio
 }))
 
 # Adding the vector to the existing data frame
-new <- cbind(df_with_vectors, all_lengths_vector)
+new <- cbind(results, all_lengths_vector)
+
+
 
 # Convert species to character and rounding edge_length
-names(new)[names(new) == "...9"] <- "edge_length"
+names(new)[names(new) == "all_lengths_vector"] <- "edge_length"
 new$species <- as.character(new$species)
-new$edge_length <- round(new$edge_length,digits = 1)
+# new$edge_length <- round(new$edge_length,digits = 1)
 
 # Renaming and creating new columns
-
-new <- transform(new, step = vector_length / edge_length)
-names(new)[names(new) == "V10"] <- "step"
+new <- transform(new, step = Distance / edge_length)
 
 
 # Optimized replicate_steps_with_group function
@@ -246,8 +309,8 @@ replicate_steps_with_group <- function(species_id, df) {
   species_data <- subset(df, species == species_id)
   return(with(species_data, data.frame(
     species = species_id,
-    group = rep(group, edge_length*10),
-    combined_group = rep(combined_group, edge_length*10),
+    group = rep(Group, edge_length*10),
+    combined_group = rep(CombinedGroup, edge_length*10),
     step = rep(step, edge_length*10)
   )))
 }
@@ -255,6 +318,7 @@ replicate_steps_with_group <- function(species_id, df) {
 # Create the new DataFrame using lapply and do.call
 new_df <- do.call(rbind, lapply(unique(new$species), function(species_id) replicate_steps_with_group(species_id, new)))
 
+#adjust to node number
 split=(round(100-branching.times(tree)["88"][1],1))*10
 
 # Calculate sequence and average step
@@ -268,7 +332,6 @@ filtered_df <- new_df %>%
   group_by(sequence) %>%
   filter(!duplicated(step)) %>%
   ungroup()
-
 
 
 all_species <- filtered_df %>%
@@ -289,159 +352,146 @@ avg_step_df <- result_df %>%
   summarize(avg_step = mean(step), .groups = 'drop')
 
 
-steps23 = avg_step_df
 
 
 # Plotting
-ggplot(avg_step_df, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
-  geom_line() +
-  theme_minimal() +
-  labs( x = "Sequence",
-       y = "Average Step Size",
-       color = "Combined Group")
-
-
-steps_all = rbind(steps12,steps13,steps14,steps23,steps24,steps34)
-
-
-avg_step_all <- steps_all %>%
-  group_by(combined_group, sequence) %>%
-  summarize(avg_step = mean(avg_step), .groups = 'drop')
-
-
-# Plotting
-p=ggplot(avg_step_all, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
+p=ggplot(avg_step_df, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
   geom_line() +
   theme_minimal() +
   labs( x = "Sequence",
         y = "Average Step Size",
-        color = "Combined Group")+
-  theme(axis.text = element_text(size = 26))+
-  scale_x_continuous( limits = c(0, 990))
+        color = "Combined Group")
 
 
-ggsave(p,height = 10,width = 22,filename = "divergence.svg")
+ggsave(p,height = 10,width = 22,filename = "diversification.svg")
 
 
 
 
 ######get angles of trajectories
-# read data
-data = read.csv("data.csv",row.names = "name")
-dat = read.csv("pca_scores.csv",row.names = "X")
-dat = dat[,1:4]
-tree = read.newick("tree.nwk")
 
-# match data with phylo
-demo = match.phylo.data(phy = tree,data = dat)
-dat = demo$data
-phy = demo$phy
-name.check(phy,dat)
 
-# define function for column pairs
-angle_calculator <- function(dat, index1, index2, phy, species = "M.rotundata"){
-  
-  # create vectors for axes
-  vec_creator <- function(dat, index, phy, species = "M.rotundata"){
-    demo = dat[,index]
-    names(demo) = rownames(dat)
-    x = as.vector(fastAnc(phy ,demo ,anc.states=setNames(c(dat[species,index]), c("78"))))
-    return(x)
-  }
-  
-  x = vec_creator(dat, index1, phy)
-  y = vec_creator(dat, index2, phy)
-  
-  # combine vectors to df
-  df <- data.frame(x=c(dat[,index1],x), y=c(dat[,index2],y))
-  
-  # extract the nodes each species go through and create path for each species for x and y
-  path = nodepath(phy)
-  a = lapply(path, function(i) df[i,1])
-  b = lapply(path, function(i) df[i,2])
-  
-  # combine results
-  a = data.frame(v1 = unlist(a), v2 = rep(seq(length(a)), lengths(a)))
-  b = data.frame(v1 = unlist(b), v2 = rep(seq(length(b)), lengths(b)))
-  demo = cbind(a, b[,1])
-  colnames(demo) = c("x","species","y")
-  
-  # make values numeric
-  demo$x = as.numeric(demo$x)
-  demo$y = as.numeric(demo$y)
-  
-  # calculate angle
-  groups = as.data.frame(data$angles)
-  rownames(groups) = rownames(data)
-  groups = match.phylo.data(phy = tree,data = groups)$data
-  groups = as.vector(groups$`data[res$phy$tip.label, ]`)
-  group_vec = groups[demo$species]
-  
-  # take absolute value
-  demo = abs(demo)
-  
-  # get vectors
-  df = mapply(c, demo$x, demo$y, SIMPLIFY = F)
-  
-  # Define a function to calculate angles between pairs of vectors
-  calc_angle <- function(i, vec_list) {
-    vec1 = vec_list[[i-1]]
-    vec2 = vec_list[[i]]
-    return(getAngle(vec1, vec2))
-  }
-  
-  # Calculate angles for each pair of vectors
-  angles <- sapply(2:length(df), calc_angle, vec_list = df)
-  
-  # Create data frame
-  angle <- data.frame(cos = angles,
-                      species = demo$species[-1],
-                      state = group_vec[-1])
-  
-  # take complementary angle
-  angle$cos = pi - angle$cos
-  
-  # remove invalid rows 
-  remove = duplicated(angle$species);remove[1]=TRUE
-  angle = angle[remove,]
-  
-  # add columns indexes
-  angle$column_1 = index1
-  angle$column_2 = index2
-  
+
+# Function to calculate the dot product of two vectors
+calc_dot_product <- function(v1, v2) {
+  sum(v1 * v2)
+}
+
+# Function to calculate the magnitude of a vector
+calc_magnitude <- function(v) {
+  sqrt(sum(v^2))
+}
+
+# Function to calculate the angle between two vectors in radians
+calc_angle <- function(v1, v2) {
+  dot_product <- calc_dot_product(v1, v2)
+  magnitude_v1 <- calc_magnitude(v1)
+  magnitude_v2 <- calc_magnitude(v2)
+  cos_theta <- dot_product / (magnitude_v1 * magnitude_v2)
+  angle <- acos(cos_theta) # Angle in radians
   return(angle)
 }
 
-# define column indexes
-column_indexes = combn(1:ncol(dat), 2, simplify = FALSE)
+# Adjusted function to calculate sequential distances and angles within a species group
+calc_sequential_distances_and_angles <- function(species_data) {
+  results <- tibble(FromRow = integer(),
+                    ToRow = integer(),
+                    Distance = numeric(),
+                    Angle = numeric(),
+                    Group = character(),
+                    CombinedGroup = character())
+  
+  if(nrow(species_data) > 1) {
+    for (i in 1:(nrow(species_data) - 1)) {
+      v1 <- species_data[i, c("PC1", "PC2", "PC3", "PC4")]
+      v2 <- species_data[i+1, c("PC1", "PC2", "PC3", "PC4")]
+      distance <- calc_distance(v1, v2)
+      angle <- calc_angle(v1, v2) # Calculate angle in radians
+      new_row <- tibble(FromRow = i,
+                        ToRow = i + 1,
+                        Distance = distance,
+                        Angle = angle, # Store angle in radians
+                        Group = as.character(species_data$group[i]),
+                        CombinedGroup = ifelse("combined_group" %in% names(species_data), as.character(species_data$combined_group[i]), NA_character_))
+      results <- bind_rows(results, new_row)
+    }
+  }
+  
+  return(results)
+}
 
-# apply function for each pair of columns
-result = bind_rows(lapply(column_indexes, function(index) {
-  angle_calculator(dat, index[1], index[2], phy)
-}))
+# Calculate sequential distances and angles for each species, ensuring group values are tracked
+angles <- demo %>%
+  group_by(species) %>%
+  do(calc_sequential_distances_and_angles(.)) %>%
+  ungroup()
+
+# Display the results
+print(angles)
 
 
-# Replace "B" with "A" and "D" with "C" in 'state' column
-result <- result %>%
-  mutate(state = ifelse(state == "B", "A", 
-                        ifelse(state == "D", "C", state)))
+new_angles <- cbind(angles, all_lengths_vector)
 
-ticks=c(pi*0.5,pi*0.75,pi,pi*1.25)
+split=(100-branching.times(tree)["88"][1])
 
-angles = ggplot(data=result, aes(x=cos, group=state, fill=state)) +
+compute_cumulative_time <- function(df) {
+  df %>%
+    group_by(species) %>%
+    mutate(time = cumsum(all_lengths_vector)) %>%
+    ungroup()
+}
+
+# Apply the function to your DataFrame
+new_angles <- compute_cumulative_time(new_angles)
+
+new_angles <- new_angles %>%
+  mutate(newGroup = ifelse(time < 30, 'all', CombinedGroup))
+
+
+angles_filtered <- new_angles %>%
+  group_by(newGroup) %>%
+  filter(!duplicated(Angle)) %>%
+  ungroup()
+
+angles_filtered$Angle = pi - angles_filtered$Angle
+
+
+
+
+ticks=c((pi-pi*1.5),(pi-pi*1.25),0,pi*0.25,pi,pi*0.5, pi*0.75,pi)
+
+ticks=c((2*pi/6),(4*pi/6),pi,(pi*8)/6)
+
+p=ggplot(data=angles_filtered, aes(x=Angle, group=newGroup, fill=newGroup)) +
   geom_density(adjust=3.5, alpha=.2) +
   theme_bw()+
-  scale_x_continuous(breaks=ticks,limits = c(pi*0.5,pi*1.25))
+  scale_x_continuous(breaks=ticks,limits = c((2*pi/6),(pi*8)/6))
 
-ggsave("angles.svg", angles, width = 18,height = 10,dpi = 300)
+ggsave("angles.svg", p, width = 18,height = 10,dpi = 300)
 
 
 ####T.test COMPARE MEANS
-t.test(cos ~ state, result)
+t.test(Angle ~ newGroup, angles_filtered)
+
+group_all <- angles_filtered$Angle[angles_filtered$newGroup == 'simple']
+group_other <- angles_filtered$Angle[angles_filtered$newGroup == 'super'] 
+
+# Perform a t-test to compare the means
+t_test_result <- t.test(group_all, group_other, alternative = "two.sided", var.equal = FALSE)
+print(t_test_result)
+
+sd(group_other)
+
 
 #####F test to compare variances
 
-var.test(data = result,cos~state)
+var.test(group_all, group_other)
 
-var(result[result$state== 'A',"cos"])
-var(result[result$state== 'C',"cos"])
+var(angles_filtered[angles_filtered$newGroup== 'super',"Angle"])
+var(angles_filtered[angles_filtered$newGroup== 'simple',"Angle"])
+var(angles_filtered[angles_filtered$newGroup== 'all',"Angle"])
+
+
+
+
+
