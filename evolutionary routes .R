@@ -495,3 +495,57 @@ var(angles_filtered[angles_filtered$newGroup== 'all',"Angle"])
 
 
 
+
+
+
+
+
+library(PhylogeneticEM)
+
+### for NA sensitivity
+# phy=phy_test
+# dat=pca_test$S[,1:2]
+# dat=(dataq)
+### for trait sensitivity
+# dat=grouped_summary[,c(2,4)]
+
+phy=read.newick("tree.nwk")
+plotTree((phy));nodelabels()
+phy=rotateNodes(tree = phy,nodes = 113)
+
+dat=read.csv("pca_scores.csv",row.names = "X")
+dat=dat[match(phy$tip.label,rownames(dat)),]
+dat=dat[,1:2] # choose number of PCs 
+dat=t(dat)
+
+
+phy=force.ultrametric(phy)
+
+res=PhyloEM(phylo = phy,Y_data = dat, process = "scOU",
+            method.selection = c("LINselect", "Djump"),
+            stationary.root = T,random.root =T)
+
+
+svglite::svglite("shifts.svg")
+
+plot(res) 
+dev.off()
+
+## Plot selected solution
+par(mar=c(4,4,4,4))
+plot(res, method.selection = "LINselect")
+plot(res, method.selection = "Djump") 
+
+summary(res)
+
+
+#multiple choices-for 4 PCs
+multi_solutions <- params_process(res, K = 4)
+svglite::svglite("shifts_4pcs_multi.svg")
+multi_solutions <- equivalent_shifts(phy, multi_solutions)
+
+plot(multi_solutions, show_shifts_values = F, shifts_cex = 0.3)
+
+dev.off()
+
+
