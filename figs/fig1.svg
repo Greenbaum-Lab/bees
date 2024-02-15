@@ -8,7 +8,7 @@
    version="1.1"
    id="svg41091"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   sodipodi:docname="__fig1.svg"
+   sodipodi:docname="fig1.svg"
    inkscape:export-filename="fig1.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300"
@@ -29,14 +29,14 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.70710678"
-     inkscape:cx="521.1377"
-     inkscape:cy="529.62298"
+     inkscape:cx="293.44931"
+     inkscape:cy="832.26468"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
      inkscape:window-y="-9"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g5306">
+     inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid113593"
@@ -4332,27 +4332,27 @@
        style="font-size:12px;font-family:Arial;-inkscape-font-specification:Arial;text-orientation:sideways;white-space:pre;shape-inside:url(#rect5993);display:inline;fill:#2b0000"><tspan
          x="94.839844"
          y="1025.0337"
-         id="tspan24334"><tspan
+         id="tspan10497"><tspan
            dx="0 -6.0996094 -6.0996094 -6.5039062"
-           id="tspan24332">דדבש</tspan></tspan></text>
+           id="tspan10495">דדבש</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.10319289,0,0,0.10319289,26.878227,137.12197)"
        id="text26428-0"
        style="font-size:24px;line-height:1.7;font-family:Arial;-inkscape-font-specification:Arial;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5);display:inline;fill:#280b0b;fill-opacity:1"><tspan
          x="938.18164"
-         y="312.72314"
-         id="tspan24340"><tspan
-           style="font-size:47.8607px;-inkscape-font-specification:'Arial, Normal'"
-           id="tspan24336">Pagel's </tspan><tspan
-           style="font-size:47.8607px;-inkscape-font-specification:'Arial, Normal'"
-           id="tspan24338">λ
+         y="308.87464"
+         id="tspan10503"><tspan
+           style="font-size:44.4421px;-inkscape-font-specification:'Arial, Normal'"
+           id="tspan10499">Pagel's </tspan><tspan
+           style="font-size:44.4421px;-inkscape-font-specification:'Arial, Normal'"
+           id="tspan10501">λ
 </tspan></tspan><tspan
          x="938.18164"
-         y="394.08633"
-         id="tspan24344"><tspan
-           style="font-size:47.8607px;-inkscape-font-specification:'Arial, Normal'"
-           id="tspan24342">Blomberg's k</tspan></tspan></text>
+         y="384.42622"
+         id="tspan10507"><tspan
+           style="font-size:44.4421px;-inkscape-font-specification:'Arial, Normal'"
+           id="tspan10505">Blomberg's k</tspan></tspan></text>
     <rect
        style="fill:#d3d3d3;fill-opacity:1;stroke:url(#linearGradient27534-6);stroke-width:0.103193"
        id="rect25615-4"
@@ -4366,7 +4366,7 @@
        width="3.2748816"
        height="3.5819023"
        x="119.27753"
-       y="174.13147" />
+       y="173.60231" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.103193;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
        d="M 115.99527,227.60974 V 173.60278"
@@ -4628,7 +4628,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect45160);display:inline;fill:#000000;fill-opacity:1;image-rendering:auto"><tspan
          x="15.900391"
          y="32.12466"
-         id="tspan24346">a</tspan></text>
+         id="tspan10509">a</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458334,0,0,0.26458333,104.83394,151.33014)"
@@ -4636,7 +4636,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect45160-5);display:inline;fill:#000000;fill-opacity:1;image-rendering:auto"><tspan
          x="15.900391"
          y="32.12466"
-         id="tspan24348">d</tspan></text>
+         id="tspan10511">d</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458334,0,0,0.26458333,0.39788476,110.29117)"
@@ -4644,7 +4644,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect45160-5-8);display:inline;fill:#000000;fill-opacity:1;image-rendering:auto"><tspan
          x="15.900391"
          y="32.12466"
-         id="tspan24350">b</tspan></text>
+         id="tspan10513">b</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458334,0,0,0.26458333,108.24241,4.4440286)"
@@ -4654,7 +4654,7 @@
        inkscape:transform-center-y="1.2464765"><tspan
          x="15.900391"
          y="32.12466"
-         id="tspan24352">c</tspan></text>
+         id="tspan10515">c</tspan></text>
     <g
        clip-path="url(#clipEmfPath2-9)"
        id="g30503"
@@ -5777,7 +5777,7 @@
        transform="matrix(0.19672751,0,0,0.19672751,12.150711,14.701646)" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
        x="118.18906"
        y="232.61166"
        id="text30593-2"><tspan
@@ -5785,199 +5785,199 @@
          x="118.18906"
          y="232.61166"
          id="tspan30591-6"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">OR<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">OR<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30589-6" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="124.87402"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="124.91279"
        y="236.31578"
        id="text30605-2"><tspan
          sodipodi:role="line"
-         x="124.87402"
+         x="124.91279"
          y="236.31578"
          id="tspan30603-1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">SX<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">SX<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30601-9" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="130.23862"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="130.20616"
        y="232.60547"
        id="text30617-0"><tspan
          sodipodi:role="line"
-         x="130.23862"
+         x="130.20616"
          y="232.60547"
          id="tspan30615-1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">PM</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">PM</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="136.28239"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="135.66216"
        y="236.31578"
        id="text30629-4"><tspan
          sodipodi:role="line"
-         x="136.28239"
+         x="135.66216"
          y="236.31578"
          id="tspan30627-1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">WM<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">WM<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30625-0" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="143.09828"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="143.10106"
        y="232.4339"
        id="text30641-9"><tspan
          sodipodi:role="line"
-         x="143.09828"
+         x="143.10106"
          y="232.4339"
          id="tspan30639-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QS</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="148.87859"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="148.84482"
        y="236.31578"
        id="text30653-6"><tspan
          sodipodi:role="line"
-         x="148.87859"
+         x="148.84482"
          y="236.31578"
          id="tspan30651-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">WS<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">WS<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30649-5" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="156.65259"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="156.74838"
        y="232.60547"
        id="text30665-3"><tspan
-         x="156.65259"
+         x="156.74838"
          y="232.60547"
          id="tspan30663-6"
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">R<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">R<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30661-9" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="161.68982"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="161.6871"
        y="236.31578"
        id="text30677-9"><tspan
          sodipodi:role="line"
-         x="161.68982"
+         x="161.6871"
          y="236.31578"
          id="tspan30675-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">BC<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">BC<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30673-2" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="166.94707"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="166.86418"
        y="232.4339"
        id="text30689-3"><tspan
          sodipodi:role="line"
-         x="166.94707"
+         x="166.86418"
          y="232.4339"
          id="tspan30687-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QW<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QW<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30685-4" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="173.78275"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="173.75122"
        y="236.31578"
        id="text30701-8"><tspan
          sodipodi:role="line"
-         x="173.78275"
+         x="173.75122"
          y="236.31578"
          id="tspan30699-4"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">OG<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">OG<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30697-4" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="179.79768"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="179.74915"
        y="232.61166"
        id="text30713-8"><tspan
          sodipodi:role="line"
-         x="179.79768"
+         x="179.74915"
          y="232.61166"
          id="tspan30711-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CM</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CM</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="186.43159"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="186.4176"
        y="236.31578"
        id="text30725-4"><tspan
          sodipodi:role="line"
-         x="186.43159"
+         x="186.4176"
          y="236.31578"
          id="tspan30723-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CA<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CA<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30721-1" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="192.92828"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="192.93739"
        y="232.61166"
        id="text30737-7"><tspan
          sodipodi:role="line"
-         x="192.92828"
+         x="192.93739"
          y="232.61166"
          id="tspan30735-7"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CF</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="198.82024"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="198.80208"
        y="236.13802"
        id="text30749-6"><tspan
          sodipodi:role="line"
-         x="198.82024"
+         x="198.80208"
          y="236.13802"
          id="tspan30747-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QF<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QF<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30745-3" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="204.80209"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="204.76416"
        y="232.61166"
        id="text30761-0"><tspan
          sodipodi:role="line"
-         x="204.80209"
+         x="204.76416"
          y="232.61166"
          id="tspan30759-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">NC<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">NC<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30757-3" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
-       x="211.20876"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       x="211.18642"
        y="236.13802"
        id="text30773-2"><tspan
          sodipodi:role="line"
-         x="211.20876"
+         x="211.18642"
          y="236.13802"
          id="tspan30771-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QL<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">QL<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30769-5" /></tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
        x="217.69601"
        y="232.61166"
        id="text30785-4"><tspan
@@ -5985,8 +5985,8 @@
          x="217.69601"
          y="232.61166"
          id="tspan30783-5"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CL<tspan
-   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888889px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CL<tspan
+   style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611111px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan30781-5" /></tspan></text>
     <text
        xml:space="preserve"
@@ -6008,10 +6008,10 @@
        xml:space="preserve"
        transform="matrix(0,-0.26458333,0.26458333,0,-123.52547,241.92468)"
        id="text32471-9"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect32473-3);display:inline;fill:url(#linearGradient7465);fill-opacity:1"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.3333px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect32473-3);display:inline;fill:url(#linearGradient7465);fill-opacity:1"><tspan
          x="84.113281"
-         y="875.44302"
-         id="tspan24354">Phylogenetic signal</tspan></text>
+         y="874.24195"
+         id="tspan10517">Phylogenetic signal</tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -6035,9 +6035,9 @@
        style="font-size:12px;font-family:Arial;-inkscape-font-specification:Arial;text-orientation:sideways;white-space:pre;shape-inside:url(#rect33147);display:inline;fill:#000000;fill-opacity:0"><tspan
          x="30.398438"
          y="972.28952"
-         id="tspan24358"><tspan
+         id="tspan10521"><tspan
            dx="0 8.0039062 8.0039062 8.6660156 8.0039062 8.0039062 8.6660156 8.0039062 8.6660156"
-           id="tspan24356">XSCSADSDV</tspan></tspan></text>
+           id="tspan10519">XSCSADSDV</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="scale(0.26458333)"
@@ -6143,7 +6143,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect9998);display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24360">The social ladder classification</tspan></text>
+         id="tspan10523">The social ladder classification</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-58.623303,-181.5792)"
@@ -6151,9 +6151,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect9998-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24364"><tspan
+         id="tspan10527"><tspan
            style="font-size:16px"
-           id="tspan24362">Solitary</tspan></tspan></text>
+           id="tspan10525">Solitary</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.9389px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"
@@ -6180,11 +6180,11 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24366">Orchid
+           id="tspan10529">Orchid
 </tspan><tspan
            x="938.18164"
            y="331.69141"
-           id="tspan24368">bees</tspan></text>
+           id="tspan10531">bees</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.10319289,0,0,0.10319289,-30.310544,146.71197)"
@@ -6192,11 +6192,11 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0-4);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24370">Stingless
+           id="tspan10533">Stingless
 </tspan><tspan
            x="938.18164"
            y="331.69141"
-           id="tspan24372">bees</tspan></text>
+           id="tspan10535">bees</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.10319289,0,0,0.10319289,-30.397361,166.42578)"
@@ -6204,11 +6204,11 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0-8);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24374">Bumble
+           id="tspan10537">Bumble
 </tspan><tspan
            x="938.18164"
            y="331.69141"
-           id="tspan24376">bees</tspan></text>
+           id="tspan10539">bees</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;fill:#000000;fill-opacity:1;stroke-width:0.264583"
@@ -6351,7 +6351,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0-3);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24378">Honey bees</tspan></text>
+           id="tspan10541">Honey bees</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.10319289,0,0,0.10319289,-30.138978,112.0423)"
@@ -6359,13 +6359,13 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0-3-1);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24380">Xylocopinae
+           id="tspan10543">Xylocopinae
 </tspan><tspan
            x="938.18164"
            y="352.48041"
-           id="tspan24384"><tspan
+           id="tspan10547"><tspan
              dx="0 22.815315 22.815315 22.815315"
-             id="tspan24382">bees</tspan></tspan></text>
+             id="tspan10545">bees</tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.10319289,0,0,0.10319289,-30.310544,183.68019)"
@@ -6373,11 +6373,11 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect26430-5-0-3-4);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24386">Sweat
+           id="tspan10549">Sweat
 </tspan><tspan
            x="938.18164"
            y="331.69141"
-           id="tspan24388">bees</tspan></text>
+           id="tspan10551">bees</tspan></text>
       <g
          id="g9483"
          transform="matrix(0.16094907,0,0,0.16094907,14.637896,131.59375)"
@@ -7793,10 +7793,10 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:41.0235px;line-height:1;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect10228);display:inline;fill:#280b0b;fill-opacity:1"><tspan
            x="938.18164"
            y="290.66791"
-           id="tspan24390">Melipona </tspan><tspan
+           id="tspan10553">Melipona </tspan><tspan
            x="938.18164"
            y="331.69141"
-           id="tspan24392">Stingless bees</tspan></text>
+           id="tspan10555">Stingless bees</tspan></text>
       <path
          style="fill:#0c0201;fill-opacity:1;stroke:#000000;stroke-width:0.131001;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:0.131001, 0.261998;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
          d="m 65.262287,167.78965 c 4.627862,0.0108 9.255906,0.0215 13.884135,0.0323"
@@ -8976,9 +8976,9 @@
          style="font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:Calibri;text-orientation:sideways;white-space:pre;shape-inside:url(#rect19400-9);display:inline;fill:#2b0000;stroke-width:1.10622;image-rendering:auto"><tspan
            x="295.26172"
            y="973.56219"
-           id="tspan24396"><tspan
+           id="tspan10559"><tspan
              style="font-size:27.9059px;-inkscape-font-specification:'Calibri, Normal'"
-             id="tspan24394">-1 </tspan></tspan></text>
+             id="tspan10557">-1 </tspan></tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.23707428,0,0,0.26458333,37.588835,-20.335448)"
@@ -8986,7 +8986,7 @@
          style="font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:Calibri;text-orientation:sideways;white-space:pre;shape-inside:url(#rect17504);display:inline;fill:#2b0000;stroke-width:1.10622;image-rendering:auto"><tspan
            x="295.26172"
            y="972.47789"
-           id="tspan24398">0</tspan></text>
+           id="tspan10561">0</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.23707428,0,0,0.26458333,113.76551,-20.335448)"
@@ -8994,7 +8994,7 @@
          style="font-size:26.6667px;font-family:Calibri;-inkscape-font-specification:Calibri;text-orientation:sideways;white-space:pre;shape-inside:url(#rect17566);display:inline;fill:#2b0000;stroke-width:1.10622;image-rendering:auto"><tspan
            x="295.26172"
            y="972.47789"
-           id="tspan24400">1</tspan></text>
+           id="tspan10563">1</tspan></text>
     </g>
     <text
        xml:space="preserve"
@@ -9003,7 +9003,7 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30.818px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect20978-9);display:inline;fill:#28220b;stroke-width:1.04713"><tspan
          x="566.02344"
          y="972.3095"
-         id="tspan24402">Spearman's correlation</tspan></text>
+         id="tspan10565">Spearman's correlation</tspan></text>
     <g
        id="g116049"
        transform="matrix(0.95224236,0,0,0.54516259,22.323252,19.101966)"
@@ -9603,7 +9603,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect20978-9-3);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24404">Trait category:</tspan></text>
+           id="tspan10567">Trait category:</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.1261082,0,0,0.1261082,109.45474,9.9441376)"
@@ -9611,7 +9611,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect20978-9-8-5);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24406">Life history
+           id="tspan10569">Life history
 </tspan></text>
       <rect
          style="fill:#b3b3b3;stroke:#000000;stroke-width:0.229306;stroke-linecap:square;stroke-miterlimit:0;stroke-dashoffset:1589.2;stroke-opacity:1;paint-order:stroke fill markers"
@@ -9660,7 +9660,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect129628);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24408">Behavioral
+           id="tspan10571">Behavioral
 </tspan></text>
       <text
          xml:space="preserve"
@@ -9669,7 +9669,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect130300);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24410">Developmental
+           id="tspan10573">Developmental
 </tspan></text>
       <text
          xml:space="preserve"
@@ -9678,7 +9678,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect130300-1);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24412">Genetic</tspan></text>
+           id="tspan10575">Genetic</tspan></text>
       <text
          xml:space="preserve"
          transform="matrix(0.1261082,0,0,0.1261082,138.03551,9.3299548)"
@@ -9686,16 +9686,16 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.1639px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-orientation:sideways;white-space:pre;shape-inside:url(#rect130790);display:inline;fill:#28220b;stroke-width:1.33071"><tspan
            x="566.02344"
            y="979.61216"
-           id="tspan24414">
+           id="tspan10577">
 </tspan><tspan
            x="566.02344"
            y="1028.5671"
-           id="tspan24416">Reproductive </tspan><tspan
+           id="tspan10579">Reproductive </tspan><tspan
            x="566.02344"
            y="1098.9168"
-           id="tspan24420"><tspan
+           id="tspan10583"><tspan
              dx="0 15.317521 16.541393 19.295105 27.996067"
-             id="tspan24418">skew
+             id="tspan10581">skew
 </tspan></tspan></text>
     </g>
     <text
@@ -17052,9 +17052,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect3676);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24424"><tspan
+         id="tspan10587"><tspan
            style="font-size:16px"
-           id="tspan24422">Communal</tspan></tspan></text>
+           id="tspan10585">Communal</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-58.623303,-170.32624)"
@@ -17062,9 +17062,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect3682);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24428"><tspan
+         id="tspan10591"><tspan
            style="font-size:16px"
-           id="tspan24426">Subsocial</tspan></tspan></text>
+           id="tspan10589">Subsocial</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-31.466755,-181.63088)"
@@ -17072,9 +17072,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect3812);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24432"><tspan
+         id="tspan10595"><tspan
            style="font-size:16px"
-           id="tspan24430">Parasocial</tspan></tspan></text>
+           id="tspan10593">Parasocial</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-31.466755,-175.72789)"
@@ -17082,9 +17082,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect3814);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24436"><tspan
+         id="tspan10599"><tspan
            style="font-size:16px"
-           id="tspan24434">Primitively eusocial</tspan></tspan></text>
+           id="tspan10597">Primitively eusocial</tspan></tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-31.466755,-170.37792)"
@@ -17092,9 +17092,9 @@
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect3816);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.77953;stroke-linecap:square;stroke-miterlimit:0;stroke-dasharray:none;stroke-dashoffset:1589.2;stroke-opacity:0.886905;paint-order:stroke fill markers"><tspan
          x="270.00391"
          y="1167.7926"
-         id="tspan24440"><tspan
+         id="tspan10603"><tspan
            style="font-size:16px"
-           id="tspan24438">Advanced eusocial</tspan></tspan></text>
+           id="tspan10601">Advanced eusocial</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333333px;line-height:125%;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.196727"
@@ -17538,5 +17538,16 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.196727">CL<tspan
    style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:Calibri;-inkscape-font-specification:'Calibri, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;stroke-width:0.196727"
    id="tspan14164-1" /></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.5861px;line-height:0.8;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;opacity:0.774859;fill:none;fill-opacity:0;stroke:#000000;stroke-width:0.2;stroke-linecap:square;stroke-miterlimit:0;paint-order:fill markers stroke"
+       x="91.486359"
+       y="216.0874"
+       id="text3721"><tspan
+         sodipodi:role="line"
+         id="tspan3719"
+         style="stroke-width:0.2"
+         x="91.486359"
+         y="216.0874">`</tspan></text>
   </g>
 </svg>
