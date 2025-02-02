@@ -9,4 +9,4 @@ dimensionality_reduction-scripts for data preprocessing, imputatoin of missing d
 phylosig_cor-calculation of correlation between traits, hierarchial clustering and phylogentic signal using Pagel's lambda and Blomberg's k.\
 
 
-If you use this data or code, please cite: 
+If you use this data or code, please cite appropriatly: 
