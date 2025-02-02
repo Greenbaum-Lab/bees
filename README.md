@@ -1,5 +1,5 @@
 # bees
-R scripts for the analysis of social complexity dataset. Used in Peled et. al. 2025.
+R scripts for the analysis of social complexity dataset. Used in Peled et. al. 2025.\
 Files included:
 data-The original data collected from extensive literature survey
 imputed_data- data after imputation of missing values using iterative PCA method
