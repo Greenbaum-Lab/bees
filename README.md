@@ -1,4 +1,4 @@
-# bees\
+# bees
 R scripts for the analysis of social complexity dataset. Used in Peled et. al. 2025.\
 Files included:\
 data-The original data collected from extensive literature survey\
