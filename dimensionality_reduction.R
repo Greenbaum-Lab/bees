@@ -13,24 +13,26 @@ library(geometry)
 library(cowplot)
 
 
+################### Data pre-processing ################### 
 # Data loading and initial preparation
 data <- read.csv("data.csv",row.names = 'X')
 
-# Data pre-processing for PCA
+# Get numeric columns
 num_cols <- sapply(data, is.numeric)  
 dataq <- data[, num_cols]  # Subset numeric columns
+
+# log10 transformation for highly variable traits 
 columns_to_log <- c("CF", "CM", "CA", "QF")
 dataq[columns_to_log] <- lapply(dataq[columns_to_log], log10)
 
-# Dimension estimation and imputation
+# Dimension estimation and imputation using iterative PCA
 n.dim <- estim_ncpPCA(dataq, scale = TRUE, method = "Regularized", method.cv = "loo")
 plot(n.dim$criterion ~ names(n.dim$criterion), xlab = "number of dimensions")
 imputed_data <- imputePCA(dataq, ncp = n.dim$ncp, scale = TRUE, method = "regularized")$completeObs
-
 imputed_data <- as.data.frame(imputed_data)
 
-# Identify columns with negative values and replace them
-which(imputed_data<0) #7 entries
+# Identify columns with negative values and fix them
+which(imputed_data<0) #8 entries
 imputed_data %>% filter_all(any_vars(.< 0))
 imputed_data$PM[imputed_data$PM <0] <- 0
 imputed_data$CL[imputed_data$CL <0] <- 0.1
@@ -44,15 +46,20 @@ imputed_data["T.angustula","R"]<- 0.75
 imputed_data["C.capitata","R"]<- 0.75
 imputed_data["C.capitata","OR"]<- 1
 
-
+# Write imputed data to csv
 write.csv(x = imputed_data,file = "imputed_data.csv")
 
-# PCA and phylogenetic PCA
+################### Phylogenetically corrected PCA ################### 
+
+# z score standardization of data
 imputed_data_norm <- scale(imputed_data)
+
+# Load phylogenetic tree
 tree <- read.newick("tree.nwk")
 plot(tree)
-
 name.check(tree, imputed_data_norm)
+
+# perform pPCA using phytools
 pca.phyl <- phyl.pca(tree, imputed_data_norm, mode = "cov", method = "lambda")
 biplot.phyl.pca(pca.phyl)
 write.csv(pca.phyl$S, "pca_scores.csv")
@@ -67,7 +74,6 @@ pca.dummy[["svd"]][["vs"]] <- sdv
 #contribution of traits to pcs
 pca.dummy[["var"]][["cos2"]]<- pca.phyl$L^2 
 
-
 # Data Visualization with ggplot2
 sociality <- data[, "sociality"]
 taxa <- data[, "taxa"]
@@ -76,8 +82,8 @@ PC2 <- paste("PC2 (", round(summary(pca.phyl)[[2]][5]*100, digits = 0), "%)", se
 
 # Create a color palette and shapes for plotting
 sociality=data[,"sociality"]
+# Special shapes for honey bees and melipona
 sociality = c(sociality,rep("hgh",4),rep("sol",10))
-
 taxa=data[,"taxa"]
 taxa = c(taxa,rep("hal",4),rep("meg",10))
 
@@ -89,9 +95,8 @@ labels=c('Solitary','Communal','Subsocial',
          'Advanced eusocial')
 
 shape = c(25,25,18,24,79,16,15)
-shape = c(25,25,18,79,16,15)
-#hal17-eug18-api24+25
-# arrange data to match unique shapes
+
+# Arrange data to match unique shapes
 basic_plot <- fviz_pca_ind(pca.dummy,axes = c(1,2), label="all")
 basic_plot$data = rbind(basic_plot$data,basic_plot$data[c(20:23,28:37),]) 
 
@@ -165,18 +170,16 @@ plot.umap = function(x, labels, shape,
   mtext(side = 3, main, cex = cex.main)
 }
 
-
+# Custumize UMAP parameters
 custom.settings = umap.defaults
 custom.settings$n_neighbors = 10
 custom.settings$min_dist = 0.5
 
+#Plot UMAP
 svg("umap_0.510.svg", width = 22, height = 14)
-
-#pca umap+add apis circles
 data.umap=umap(pca.phyl$S[,1:10],preserve.seed =F,config = custom.settings)
 data.umap$layout = rbind(data.umap$layout, data.umap$layout[c(20:23,28:37),])
 plot.umap(data.umap,sociality,shape = as.numeric(shp))
-
 dev.off()
 
 #######subclusters test to show bombus seperation
@@ -191,14 +194,12 @@ dev.off()
 ####################### calculate convex hull############
 
 # load data
-data <- read.csv("data (5).csv",row.names = "X")
-# or
-pca_scores = read.csv("pca_scores (3).csv", row.names = "X")
+data <- read.csv("data.csv",row.names = "X")
+pca_scores <- read.csv("pca_scores.csv", row.names = "X")
 
 # pca_scores=pca.phyl$S
 # verify groups of corbiculate bees and remaining species
-# (excluding tridentata and marginatum) 
-group_CD = data["taxa"]=="api" | data["taxa"]=="mel" | data["taxa"]=="bom"
+group_CD <- data["taxa"]=="api" | data["taxa"]=="mel" | data["taxa"]=="bom"
 group_AB <- !group_CD
 
 # subset 4 pcs
@@ -207,19 +208,12 @@ group_AB <- as.matrix(pca_scores[group_AB,1:4])
 
 
 # Convex hull for unscaled data
-hull_AB_unscaled <- convhulln(group_AB, output.options = TRUE, options = "FA")
-hull_CD_unscaled <- convhulln(group_CD, output.options = TRUE, options = "FA")
-
-# Convex hull for scaled data
-hull_AB_scaled <- convhulln(group_AB_scaled, output.options = TRUE, options = "FA")
-hull_CD_scaled <- convhulln(group_CD_scaled, output.options = TRUE, options = "FA")
+hull_AB <- convhulln(group_AB, output.options = TRUE, options = "FA")
+hull_CD <- convhulln(group_CD, output.options = TRUE, options = "FA")
 
 # Compute ratios
-ratio_unscaled <- hull_CD_unscaled$vol / hull_AB_unscaled$vol
-cat("Ratio for unscaled data:", ratio_unscaled, "\n")
-
-ratio_scaled <- hull_CD_scaled$vol / hull_AB_scaled$vol
-cat("Ratio for scaled data:", ratio_scaled, "\n")
+ratio <- hull_CD$vol / hull_AB$vol
+cat("Ratio between superorganisms and remaining species:", ratio, "\n")
 
 #calculate number of significant pca dimensions
 summary(pca.phyl)
@@ -227,14 +221,10 @@ x=as.numeric(unlist(summary(pca.phyl)[1]))
 x = round(x^2/sum(x^2),digits = 2)
 bsDimension(x)
 
-scaling_factor <- prod(weights)
 
 
-
-
-
-#################################################################
-############### contribution of traits to PCs ###################
+################# supplementary information #######################
+############### contribution of traits to PCs  ###################
 loadings <- pca.phyl$L
 contributions <- sapply(1:ncol(loadings), function(i) {
   (loadings[, i]^2) * 100 / sum(loadings[, i]^2)
