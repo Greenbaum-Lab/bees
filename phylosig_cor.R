@@ -56,7 +56,12 @@ print(phyl.sig[4,])
 print(round(p.adjust(phyl.sig[4,], "BH"), 6))
 
 
-##########################################################
+
+
+
+
+
+###########################################################
 ####################### Compute correlation matrix ########
 tree= read.newick('tree.nwk')
 df = read.csv("imputed_data.csv",row.names = 'X')
@@ -109,7 +114,7 @@ corrplot(correlation_matrix, order = "original", method = "square",
 dev.off()
 
 
-# make hierarchical clustering
+# Compute hierarchical clustering
 svglite("heatmap.svg",10,10)
 heatmap(correlation_matrix)
 dev.off()
@@ -126,7 +131,7 @@ desired_order <- c("WM", "PM", "SX", "OR", "WS", "R", "NC", "QL", "CL", "BC",
 data_imputed <- read.csv('imputed_data.csv', row.names = 'X')  # Assuming 'X' is your first column as row names
 data_imputed <- data_imputed[, desired_order]
 rownames(data_imputed)
-data_na <- dataq  # Assuming dataq is your original data with NAs
+data_na <- dataq  #  dataq is the original data with only quantitative values. Calculated in dimensionality_reduction
 data_na <- data_na[, desired_order]
 
 # Mask for NA values in the original data
