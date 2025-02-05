@@ -686,51 +686,82 @@ cat("All group:", variance_all, "\n")
 
 
 
-####### Identify adaptive shifts
+################################################################################
+# Identify Adaptive Shifts using PhylogeneticEM
+#
+# This script uses the PhylogeneticEM package to detect adaptive shifts on a
+# phylogenetic tree. Several sections of the code allow for testing different
+# data inputs (e.g., NA sensitivity or trait sensitivity) by uncommenting the
+# corresponding lines.
+################################################################################
 
+# Load the PhylogeneticEM library
 library(PhylogeneticEM)
 
-### for NA sensitivity
-# phy=phy_test
-# dat=pca_test$S[,1:2]
-# dat=(dataq)
-### for trait sensitivity
-# dat=grouped_summary[,c(2,4)]
+# ------------------------------------------------------------------------------
+# Alternative Data Options:
+# Uncomment one of the following sections if you want to adjust the analysis
+# for NA sensitivity or trait sensitivity.
+#
+# For NA sensitivity:
+#   Use an alternative tree and/or principal component summary.
+# ------------------------------------------------------------------------------
+# phy <- phy_test
+# dat <- pca_test$S[, 1:2]
+# dat <- dataq
 
+# For trait sensitivity:
+#   Use trait data from a grouped summary.
+# ------------------------------------------------------------------------------
+# dat <- grouped_summary[, c(2, 4)]
+
+# ------------------------------------------------------------------------------
+# Data Preparation:
+# Ensure that any open graphics devices are closed.
 dev.off()
-phy=read.newick("tree.nwk")
-plotTree((phy));nodelabels()
-phy=force.ultrametric(phy)
 
-# pca_scores=read.csv("pca_scores.csv",row.names = "X")
-# pca_scores=pca_scores[,1:4] # choose number of PCs 
-# pca_scores=t(pca_scores)
+# Read in the phylogenetic tree from a Newick file.
+phy <- read.newick("tree.nwk")
 
-# data_imputed = read.csv('imputed_data.csv',row.names = "X")
-# data_imputed = t(data_imputed)
+# Plot the raw tree with node labels for verification.
+plotTree(phy)
+nodelabels()
 
-res=PhyloEM(phylo = phy,Y_data = pca_scores, process = "scOU",
-            method.selection = c("LINselect", "Djump"),
-            stationary.root = T,random.root =T)
+# Force the tree to be ultrametric (i.e., all tips equidistant from the root).
+phy <- force.ultrametric(phy)
+
+# Load PCA data
+pca_scores <- read.csv("pca_scores.csv", row.names = "X")
+pca_scores <- pca_scores[, 1:2]  # Choose the number of PCs to use.
+pca_scores <- t(pca_scores)
 
 
-# svglite::svglite("shifts.svg")
-plot(res) 
-# dev.off()
 
-## Plot selected solution
-par(mar=c(4,4,4,4))
-plot(res, method.selection = "LINselect")
+# ------------------------------------------------------------------------------
+# Run the PhylogeneticEM Analysis:
+res <- PhyloEM(phylo = phy,
+               Y_data = pca_scores,
+               process = "scOU",
+               method.selection = c("LINselect", "Djump"),
+               stationary.root = TRUE,
+               random.root = TRUE)
 
+# Plot the overall results.
+svglite::svglite("shifts.svg")
+plot(res)
+dev.off()
+
+# Plot the selection criterion (e.g., model selection criterion) for LINselect.
 plot_criterion(res, method.selection = "LINselect")
 
-
-#multiple choices-for 4 PCs
+# ------------------------------------------------------------------------------
+# Multiple Solutions for 4 Principal Components:
 multi_solutions <- params_process(res, K = 4)
+
+# Plot the multi–solutions
 svglite::svglite("shifts_4pcs_multi.svg")
 multi_solutions <- equivalent_shifts(phy, multi_solutions)
-plot(multi_solutions, show_shifts_values = F, shifts_cex = 0.3)
-
+plot(multi_solutions, show_shifts_values = FALSE, shifts_cex = 0.3)
 dev.off()
 
 
