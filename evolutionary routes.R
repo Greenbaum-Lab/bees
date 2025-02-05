@@ -479,142 +479,157 @@ plot_obj <- summarize_and_plot(result_df)
 
 
 
+################################################################################
+# Calculate Angles of Phenotypic Trajectories
+#
+# This script computes the Euclidean distances and the angles (in radians) 
+# between consecutive points (trajectories) in a 4D phenotypic space for each 
+# species. It then joins phylogenetic branch lengths to these steps, computes 
+# cumulative “time” along each trajectory, and finally creates a density plot 
+# of the adjusted angles.
+################################################################################
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-######Calculate angles of trajectories
-
-# Initialize weights for each dimension
-weights <- c(28, 15, 13, 12)
-# weights <- c(1,1,1,1)
-
-# Function to calculate the weighted dot product of two vectors
-calc_dot_product <- function(v1, v2, weights) {
-  sum(v1 * v2 * weights)
+### Helper Functions ###########################################################
+# Calculate the dot product between two numeric vectors.
+calc_dot_product <- function(v1, v2) {
+  sum(v1 * v2)
 }
 
-# Function to calculate the weighted magnitude of a vector
-calc_magnitude <- function(v, weights) {
-  sqrt(sum((v^2) * weights))
+# Calculate the magnitude (Euclidean norm) of a numeric vector.
+calc_magnitude <- function(v) {
+  sqrt(sum(v^2))
 }
 
-# Function to calculate the angle between two weighted vectors in radians
-calc_angle <- function(v1, v2, weights) {
-  dot_product <- calc_dot_product(v1, v2, weights)
-  magnitude_v1 <- calc_magnitude(v1, weights)
-  magnitude_v2 <- calc_magnitude(v2, weights)
+# Calculate the angle (in radians) between two vectors.
+calc_angle <- function(v1, v2) {
+  dot_product  <- calc_dot_product(v1, v2)
+  magnitude_v1 <- calc_magnitude(v1)
+  magnitude_v2 <- calc_magnitude(v2)
+  # Guard against division by zero
+  if (magnitude_v1 == 0 || magnitude_v2 == 0) return(NA_real_)
   cos_theta <- dot_product / (magnitude_v1 * magnitude_v2)
-  angle <- acos(cos_theta) # Angle in radians
+  # Ensure the cosine value is in the valid range [-1, 1] to avoid NaN from acos()
+  cos_theta <- min(max(cos_theta, -1), 1)
+  angle <- acos(cos_theta)
   return(angle)
 }
 
-# Adjusted function to calculate sequential weighted distances and angles per species
-calc_sequential_distances_and_angles <- function(species_data, weights) {
-  results <- tibble()  # Start with an empty tibble
+# Calculate sequential distances and angles for a given species.
+# The function loops over consecutive rows (steps) in the species’ phenotypic
+# data (columns "PC1", "PC2", "PC3", "PC4") and returns a tibble with:
+#  - FromRow: starting step index,
+#  - ToRow: ending step index,
+#  - Distance: Euclidean distance between the two points,
+#  - Angle: Angle (in radians) between the two vectors,
+#  - Group: The group label from the data,
+#  - CombinedGroup: If available, the combined group label.
+calc_sequential_distances_and_angles <- function(species_data) {
+  results <- tibble()  # Initialize an empty tibble
   
   if (nrow(species_data) > 1) {
     for (i in 1:(nrow(species_data) - 1)) {
-      v1 <- species_data[i, c("PC1", "PC2", "PC3", "PC4")]
-      v2 <- species_data[i+1, c("PC1", "PC2", "PC3", "PC4")]
-      distance <- calc_distance(v1, v2, weights)  # Use weighted distance function
-      angle <- calc_angle(v1, v2, weights)  # Calculate weighted angle in radians
+      # Extract phenotypic vectors and ensure they are numeric
+      v1 <- as.numeric(species_data[i, c("PC1", "PC2", "PC3", "PC4")])
+      v2 <- as.numeric(species_data[i + 1, c("PC1", "PC2", "PC3", "PC4")])
+      
+      distance <- calc_distance(v1, v2)
+      angle    <- calc_angle(v1, v2)
+      
+      # Create a tibble for the current pair
       new_row <- tibble(
-        FromRow = i,
-        ToRow = i + 1,
-        Distance = distance,
-        Angle = angle,
-        Group = species_data$group[i],
-        CombinedGroup = ifelse("combined_group" %in% names(species_data), species_data$combined_group[i], NA_character_)
+        FromRow       = i,
+        ToRow         = i + 1,
+        Distance      = distance,
+        Angle         = angle,
+        Group         = species_data$group[i],
+        CombinedGroup = if ("combined_group" %in% names(species_data)) {
+          species_data$combined_group[i]
+        } else {
+          NA_character_
+        }
       )
       results <- bind_rows(results, new_row)
     }
   }
-  
   return(results)
 }
 
-# Calculate sequential distances and angles for each species, ensuring group values are tracked
-angles <- demo %>%
+### Compute Angles and Distances per Species ###################################
+
+# Calculate sequential distances and angles for each species.
+# Assumes that 'lineage_df_all' includes columns: PC1, PC2, PC3, PC4, species, and group.
+angles <- combined_pcs_df %>%
   group_by(species) %>%
-  group_modify(~ calc_sequential_distances_and_angles(.x, weights)) %>%
+  group_modify(~ calc_sequential_distances_and_angles(.x)) %>%
   ungroup()
 
-new_angles <- cbind(angles, all_lengths_vector)
+# Add a sequential step identifier (step_seq) for each species to enable joining
+# with phylogenetic branch lengths. (Assumes that the ordering of the rows in
+# the phenotypic trajectory matches that in the phylogenetic data.)
+angles <- angles %>%
+  group_by(species) %>%
+  mutate(step_seq = row_number()) %>%
+  ungroup()
 
-split=(100-branching.times(tree)["103"][1])
+### Join Phylogenetic Branch Lengths ###########################################
+# Instead of using the old 'all_lengths_vector', we join branch lengths from
+# 'species_edge_df' (previously computed in the phylogenetic data processing).
+# 'species_edge_df' must contain columns: species, step_seq, and edge_length.
+angles <- left_join(angles, species_edge_df %>% dplyr::select(species, step_seq, edge_length),
+                    by = c("species", "step_seq"))
 
+### Compute Cumulative “Time” Along Trajectories ##############################
+# Here, we use the branch lengths (edge_length) to calculate cumulative time.
 compute_cumulative_time <- function(df) {
   df %>%
     group_by(species) %>%
-    mutate(time = cumsum(all_lengths_vector)) %>%
+    mutate(time = cumsum(edge_length)) %>%
     ungroup()
 }
 
-# Apply the function to your DataFrame
-new_angles <- compute_cumulative_time(new_angles)
+# Apply the cumulative time calculation.
+angles_with_time <- compute_cumulative_time(angles)
 
-new_angles <- new_angles %>%
-  mutate(newGroup = ifelse(time < 30, 'all', CombinedGroup))
+# Locate timing of split between super group and remaining species
+plotTree(phylo_tree); nodelabels(); axisPhylo()
+bt <- branching.times(phylo_tree)
+splitting_time_super <- bt["103"]
+splitting_time_root <- bt["81"]
+splitting_time_super <- (splitting_time_root - splitting_time_super)
 
+# Create a new grouping variable:
+# If the cumulative time is less than 30, label as "all"; otherwise use CombinedGroup.
+angles_with_time <- angles_with_time %>%
+  mutate(newGroup = ifelse(time < splitting_time_super, "all", CombinedGroup))
 
-angles_filtered <- new_angles %>%
+### Filter and Adjust Angles ###################################################
+# Remove duplicate angle values within each newGroup.
+angles_filtered <- angles_with_time %>%
   group_by(newGroup) %>%
   filter(!duplicated(Angle)) %>%
   ungroup()
 
-angles_filtered$Angle = pi - angles_filtered$Angle
+# Adjust angles by taking the complementary angle (pi - Angle)
+angles_filtered <- angles_filtered %>%
+  mutate(Angle = pi - Angle)
 
-ticks=c((pi/10),(5*pi/10),pi,((15*pi)/10))
+### Plot Density of Angles #####################################################
+# Define tick marks for the x–axis.
+ticks <- c(pi / 10, (5 * pi) / 10, pi, (15 * pi) / 10)
 
-p=ggplot(data=angles_filtered, aes(x=Angle, group=newGroup, fill=newGroup)) +
-  geom_density(adjust=3.5, alpha=.2) +
-  theme_bw()+
-  scale_x_continuous(breaks=ticks,limits = c((pi/10),(15*pi)/10))
+# Create a density plot of the angles grouped by newGroup.
+p <- ggplot(data = angles_filtered, aes(x = Angle, group = newGroup, fill = newGroup)) +
+  geom_density(adjust = 3.5, alpha = 0.2) +
+  theme_bw() +
+  scale_x_continuous(breaks = ticks, limits = c(pi / 10, (15 * pi) / 10)) +
+  labs(x = "Adjusted Angle (radians)", y = "Density", fill = "Group")
 
-ggsave("angles_unscaled.svg", p, width = 18,height = 10,dpi = 300)
+# Save the plot as an SVG file.
+ggsave("angles_unscaled.svg", p, width = 18, height = 10, dpi = 300)
+
+# Optionally, display the plot.
+print(p)
 
 
 
