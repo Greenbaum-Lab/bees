@@ -12,51 +12,111 @@ library(tidyr)
 library(tibble)
 
 
-# Ancestral state reconstruction for PC1
+################################################################################
+# Ancestral State Reconstruction using Phylogenetic Trees and PCA Scores
+#
+# This script performs ancestral state reconstruction in one and two dimensions.
+# It uses a phylogenetic tree (in Newick format) and PCA scores (from a CSV file)
+# to (i) reconstruct the ancestral state for PC1 and plot a phenogram, and (ii)
+# create a lineage plot of PC1 vs. PC2 with the evolutionary paths inferred.
+################################################################################
+
+
+
+################################################################################
+# Part 1: Ancestral State Reconstruction (1D) for PC1
+################################################################################
+
+# Set outer margins for plotting (bottom, left, top, right)
 par(oma = c(4, 4, 0, 0))
-tree <- read.newick("tree.nwk") # Assuming tree is loaded here for context
+
+# -------------------------- Data Loading --------------------------------------
+
+# Load the phylogenetic tree from a Newick file
+phylo_tree <- read.newick("tree.nwk")
+
+# Load PCA scores (assumed to have a column 'X' as rownames)
 pca_scores <- read.csv("pca_scores.csv", row.names = "X")
 
-#node label of clades
-# 78-hal black
-# 79-apida
-# 83-eug
-# 93-mel
-# 120-bom
-# 136-apis
+# -------------------------- Node Labeling and Tree Coloring -------------------
 
-# Define sub-trees and their states
-plotTree(tree);nodelabels()
-tree_col <- tree
-tree_col <- paintSubTree(tree_col, node = 81, state = "1", stem = F) # root
-tree_col <- paintSubTree(tree_col, node = 94, state = "2", stem = F) # euglossini
-tree_col <- paintSubTree(tree_col, node = 103, state = "6", stem = T) # apis
-tree_col <- paintSubTree(tree_col, node = 107, state = "5", stem = T) # melipona
-tree_col <- paintSubTree(tree_col, node = 135, state = "4", stem = T) # bombus
-tree_col <- paintSubTree(tree_col, node = 83, state = "7", stem = T) # halictidae
-tree_col <- paintSubTree(tree_col, node = 151, state = "3", stem = F) # xylocopinae
+# For reference, these comments map node numbers to clade names.
+# (Adjust these as necessary for your dataset.)
+#   - Node 81: Root
+#   - Node 94: Euglossini
+#   - Node 103: Apis
+#   - Node 107: Melipona
+#   - Node 135: Bombus
+#   - Node 82: Halictidae
+#   - Node 151: Xylocopinae
 
-# Define colors for plotting
-# cols <- c("#E7B800", "#CC79A7", "#0072B2", "#009E73", "#00FF00", "#000000", "grey58")
+# Plot the original tree with node labels (useful for verifying node numbers)
+plotTree(phylo_tree)
+nodelabels()
 
-cols <- c("#000000","#CC79A7","#E7B800",  "#0072B2", "#009E73", "#00FF00",  "#D55E00")
-names(cols) <- c(1, 2, 3, 4, 5, 6, 7)
-plotSimmap(tree_col, cols, lwd = 3, pts = F)
+# Create a copy of the tree that will be colored by clade/state
+colored_tree <- phylo_tree
 
-# Ancestral state reconstruction for PC1 
-pc1=pca_scores[,1]
-names(pc1) <- rownames(pca_scores)
-reconstruct <- fastAnc(tree, pc1)
+# Paint subtrees for different clades using their node numbers.
+# The 'state' parameter here is a label (as a string) used to map to colors.
+colored_tree <- paintSubTree(colored_tree, node = 81,  state = "1", stem = FALSE)  # Root
+colored_tree <- paintSubTree(colored_tree, node = 94,  state = "2", stem = FALSE)  # Euglossini
+colored_tree <- paintSubTree(colored_tree, node = 103, state = "6", stem = TRUE)   # Apis
+colored_tree <- paintSubTree(colored_tree, node = 107, state = "5", stem = TRUE)   # Melipona
+colored_tree <- paintSubTree(colored_tree, node = 135, state = "4", stem = TRUE)   # Bombus
+colored_tree <- paintSubTree(colored_tree, node = 82,  state = "7", stem = TRUE)   # Halictidae
+colored_tree <- paintSubTree(colored_tree, node = 151, state = "3", stem = FALSE)  # Xylocopinae
 
-# Save plot of reconstruction
+# Define a named vector of colors for each state
+state_colors <- c("1" = "#000000",  # Black
+                  "2" = "#CC79A7",  # Magenta/pink
+                  "3" = "#E7B800",  # Yellow
+                  "4" = "#0072B2",  # Blue
+                  "5" = "#009E73",  # Greenish
+                  "6" = "#00FF00",  # Bright green
+                  "7" = "#D55E00")  # Orange
+
+# Plot the colored tree using a simmap representation
+plotSimmap(colored_tree, state_colors, lwd = 3, pts = FALSE)
+
+# -------------------------- Ancestral State Reconstruction ----------------------
+
+# Extract PC1 scores from the PCA dataset.
+# The names of the vector are set to the tip labels for proper matching.
+pca_pc1 <- pca_scores[, 1]
+names(pca_pc1) <- rownames(pca_scores)
+
+# Reconstruct ancestral states for PC1 using fastAnc (from phytools)
+anc_states_pc1 <- fastAnc(phylo_tree, pca_pc1)
+
+# -------------------------- Plot and Save Phenogram -----------------------------
+
+# Save the phenogram plot to an SVG file
 svg("reconstruct_pc1_sens.svg", width = 18, height = 12)
-phenogram(tree=tree_col,x = pc1, colors = cols, spread.labels = T,
-          lwd = 4,spread.cost=c(1,0))
-fancyTree(tree = tree,type = 'phenogram95',x=pc1,colors=cols,spread.cost=c(1,0))
+
+# Plot the phenogram showing the evolution of PC1 over the tree
+phenogram(tree = colored_tree,
+          x = pca_pc1,
+          colors = state_colors,
+          spread.labels = TRUE,
+          lwd = 4,
+          spread.cost = c(1, 0))
+
+# Alternatively, display tree with the confidence intervals
+fancyTree(tree = colored_tree,
+          type = 'phenogram95',
+          x = pca_pc1,
+          colors = state_colors,
+          spread.cost = c(1, 0))
 dev.off()
 
 
-#######################################################
+
+
+
+
+
+###################################################################
 ############ Ancestral State Reconstruction 2D ###################
 # Read data and match with phylogeny
 data <- read.csv("data.csv", row.names = 'X')
@@ -70,7 +130,7 @@ y = as.vector(fastAnc(tree = phy,x=pca_scores[,'PC2']))
 
 # Create vectors for axes and combine to dataframe
 index <- c(1,2)
-df <- data.frame(x = c(dat[, index[1]], x), y = c(dat[, index[2]], y))
+df <- data.frame(x = c(pca_scores[, index[1]], x), y = c(pca_scores[, index[2]], y))
 
 # Extract paths and create combined dataframe for plotting
 path <- nodepath(phy)
@@ -90,8 +150,8 @@ cols <- c("#00FF00", "#0072B2", "#CC79A7", "#D55E00", "#000000", "#009E73", "#E7
 ggplot() +
   geom_path(data = demo, aes(x = x, y = y, colour = group, group = species),
             arrow = arrow(length = unit(0.3, "cm"))) +
-  geom_point(data = demo, aes(x = x, y = y), color = "grey57", size = 0.5) +
-  geom_point(data = dat, aes(x = PC1, y = PC2), color = "black", size = 0.5) +
+  geom_point(data = demo, aes(x = x, y = y), color = "grey57", size = 1) +
+  geom_point(data = pca_scores, aes(x = PC1, y = PC2), color = "black", size = 1.5) +
   theme_void() +
   labs(x = "PC1", y = "PC2") +
   theme(plot.margin = unit(c(1, 1, 1, 1), "cm"),
