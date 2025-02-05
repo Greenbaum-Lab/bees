@@ -92,7 +92,7 @@ anc_states_pc1 <- fastAnc(phylo_tree, pca_pc1)
 # -------------------------- Plot and Save Phenogram -----------------------------
 
 # Save the phenogram plot to an SVG file
-svg("reconstruct_pc1_sens.svg", width = 18, height = 12)
+svg("reconstruct_pc1.svg", width = 18, height = 12)
 
 # Plot the phenogram showing the evolution of PC1 over the tree
 phenogram(tree = colored_tree,
@@ -103,7 +103,7 @@ phenogram(tree = colored_tree,
           spread.cost = c(1, 0))
 
 # Alternatively, display tree with the confidence intervals
-fancyTree(tree = colored_tree,
+fancyTree(tree = phylo_tree,
           type = 'phenogram95',
           x = pca_pc1,
           colors = state_colors,
@@ -114,68 +114,116 @@ dev.off()
 
 
 
+################################################################################
+# Part 2: Ancestral State Reconstruction in 2D
+################################################################################
 
+# -------------------------- Data Loading and Matching -------------------------
 
-###################################################################
-############ Ancestral State Reconstruction 2D ###################
-# Read data and match with phylogeny
-data <- read.csv("data.csv", row.names = 'X')
-pca_scores <- read.csv("pca_scores.csv", row.names = "X")
-phy <- read.newick("tree.nwk")
-name.check(phy, pca_scores)
+# Load additional data with taxa information
+data_table <- read.csv("data.csv", row.names = "X")
 
-# get ancestral states of pcs
-x = as.vector(fastAnc(tree = phy,x=pca_scores[,'PC1']))
-y = as.vector(fastAnc(tree = phy,x=pca_scores[,'PC2']))
+# (Re)load the phylogenetic tree (if not already in memory)
+phylo_tree <- read.newick("tree.nwk")
 
-# Create vectors for axes and combine to dataframe
-index <- c(1,2)
-df <- data.frame(x = c(pca_scores[, index[1]], x), y = c(pca_scores[, index[2]], y))
+# Check that tip labels in the tree match the row names in the PCA scores dataset
+name.check(phylo_tree, pca_scores)
 
-# Extract paths and create combined dataframe for plotting
-path <- nodepath(phy)
-a <- lapply(path, function(i) df[i, 1])
-b <- lapply(path, function(i) df[i, 2])
-demo <- cbind(data.frame(v1 = unlist(a), v2 = rep(seq(length(a)), lengths(a))), unlist(b))
-colnames(demo) <- c("x", "species", "y")
-demo <- mutate(demo, x = as.numeric(x), y = as.numeric(y))
+# -------------------------- Ancestral State Calculation -------------------------
 
-# Read taxa, match with phylogeny, and create plot
-taxa <- as.data.frame(data$taxa)
-rownames(taxa) <- rownames(data)
-demo$group <- taxa[demo$species,]
+# Reconstruct ancestral states for PC1 and PC2
+# for downstream analyses, PC3+4 are also needed to be calculated,
+# so adjust the code as necessary
+ancestral_pc1 <- as.vector(fastAnc(tree = phylo_tree, x = pca_scores[,"PC1"]))
+ancestral_pc2 <- as.vector(fastAnc(tree = phylo_tree, x = pca_scores[,"PC2"]))
 
-# Plot by lineage
-cols <- c("#00FF00", "#0072B2", "#CC79A7", "#D55E00", "#000000", "#009E73", "#E7B800")
+# -------------------------- Combine Tip and Ancestral Data ----------------------
+
+# Combine the tip scores with the ancestral reconstructions.
+# Assume that the ordering of rows in 'pca_scores' matches the tip order in 'phylo_tree'.
+combined_scores <- data.frame(
+  PC1 = c(pca_scores$PC1, ancestral_pc1),
+  PC2 = c(pca_scores$PC2, ancestral_pc2)
+)
+
+# -------------------------- Build Data for Lineage Plot -------------------------
+
+# Extract the node paths (list of node indices from root to each tip)
+node_paths <- nodepath(phylo_tree)
+
+# For each tip, create a data frame of its evolutionary path through the tree.
+# Each path will include the PC1 and PC2 values along that lineage.
+lineage_paths_list <- lapply(seq_along(node_paths), function(tip_index) {
+  nodes_along_path <- node_paths[[tip_index]]
+  data.frame(
+    tip_index = tip_index,
+    path_order = seq_along(nodes_along_path),
+    PC1 = combined_scores[nodes_along_path, "PC1"],
+    PC2 = combined_scores[nodes_along_path, "PC2"]
+  )
+})
+
+# Combine the list into a single data frame for plotting
+lineage_df <- do.call(rbind, lineage_paths_list)
+
+# Add tip labels to the lineage data.
+# The first 'n' rows (where n is the number of tips) correspond to the tip labels.
+lineage_df <- lineage_df %>%
+  mutate(tip_label = phylo_tree$tip.label[tip_index])
+
+# Merge grouping information from the taxa data.
+# It is assumed that row names in 'data_table' match the tip labels.
+lineage_df$group <- data_table[lineage_df$tip_label, "taxa"]
+
+# -------------------------- Define Colors for Groups ---------------------------
+
+# Define a vector of colors for each group.
+group_colors <- c("#00FF00", "#0072B2", "#CC79A7", 
+                  "#D55E00", "#000000", "#009E73", "#E7B800")
+
+# -------------------------- Create the Lineage Plot -----------------------------
+
 ggplot() +
-  geom_path(data = demo, aes(x = x, y = y, colour = group, group = species),
+  # Plot the evolutionary paths (lineages) with arrows
+  geom_path(data = lineage_df,
+            aes(x = PC1, y = PC2, colour = group, group = tip_label),
             arrow = arrow(length = unit(0.3, "cm"))) +
-  geom_point(data = demo, aes(x = x, y = y), color = "grey57", size = 1) +
-  geom_point(data = pca_scores, aes(x = PC1, y = PC2), color = "black", size = 1.5) +
+  # Add small grey points to indicate internal nodes
+  geom_point(data = lineage_df, aes(x = PC1, y = PC2),
+             color = "grey57", size = 1) +
+  # Overlay the tip (observed) PCA scores as black points
+  geom_point(data = pca_scores, aes(x = PC1, y = PC2),
+             color = "black", size = 1.5) +
+  # Use a minimal theme (no background grid)
   theme_void() +
   labs(x = "PC1", y = "PC2") +
   theme(plot.margin = unit(c(1, 1, 1, 1), "cm"),
         legend.position = "none",
         panel.border = element_rect(fill = NA)) +
-  scale_color_manual(values = cols)
+  scale_color_manual(values = group_colors)
 
 
-
-
+# Create a data frame that combines four principal components (PC1-PC4),
+# along with species and group information.
+# In this example, it is assumed that:
+#   - Columns 3 and 4 of 'lineage_df' contain PC data (used twice for PC1/PC2 and PC3/PC4).
+#   - Columns 5 and 6 of 'lineage_df' contain species and group data.
+# lineage_df_all <- cbind(
+#   lineage_df[, c(3, 4)],   # Assumed to be PC1 and PC2
+#   lineage_df[, c(3, 4)],   # Assumed to be PC3 and PC4 
+#   lineage_df[, c(5, 6)]    # Species and group information
+# )
+# colnames(lineage_df_all) <- c("PC1", "PC2", "PC3", "PC4", "species", "group")
 
 ############################################################
 ################ directionality ############################
-# Calculate step size of the evolutionary trajectory 
+# Calculate step size (branch length) of the evolutionary trajectory 
 #in the 4D phenotypic space
 
-# combine data to include all anecstral nodes based on PC1-4
-demo12=demo
-demo34=demo
-demo <- cbind(demo12[,c(1,3)], demo34[,c(1,3)], demo12[,c(2,4)])
-colnames(demo) <- c("PC1", "PC2", "PC3", "PC4", "species", "group")
+
 
 # arrange data based on the phylo group and species
-demo <- demo %>%
+lineage_df_all <- lineage_df_all %>%
   arrange(species) %>%
   group_by(species) %>%
   mutate(combined_group = ifelse(group %in% c("api", "bom", "mel"), "super", "simple"))
