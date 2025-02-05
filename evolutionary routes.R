@@ -593,10 +593,7 @@ angles_with_time <- compute_cumulative_time(angles)
 
 # Locate timing of split between super group and remaining species
 plotTree(phylo_tree); nodelabels(); axisPhylo()
-bt <- branching.times(phylo_tree)
-splitting_time_super <- bt["103"]
-splitting_time_root <- bt["81"]
-splitting_time_super <- (splitting_time_root - splitting_time_super)
+splitting_time_super = 30
 
 # Create a new grouping variable:
 # If the cumulative time is less than 30, label as "all"; otherwise use CombinedGroup.
@@ -628,33 +625,62 @@ p <- ggplot(data = angles_filtered, aes(x = Angle, group = newGroup, fill = newG
 # Save the plot as an SVG file.
 ggsave("angles_unscaled.svg", p, width = 18, height = 10, dpi = 300)
 
-# Optionally, display the plot.
-print(p)
 
 
 
-# Statistical Tests
-# -----------------
-# T-test to compare means
-group_simple <- angles_filtered$Angle[angles_filtered$newGroup == 'simple']
-group_super <- angles_filtered$Angle[angles_filtered$newGroup == 'super'] 
-group_all <- angles_filtered$Angle[angles_filtered$newGroup == 'all'] 
 
-# Perform a t-test to compare the means
-t_test_result <- t.test(group_simple, group_super, alternative = "two.sided", var.equal = FALSE)
+################################################################################
+# Statistical Tests: Comparing Angles Across Groups
+################################################################################
+
+# ------------------------------------------------------------------------------
+# Extract angle data for each group from the 'angles_filtered' data frame.
+# ------------------------------------------------------------------------------
+angles_simple <- angles_filtered %>%
+  filter(newGroup == "simple") %>%
+  pull(Angle)
+
+angles_super <- angles_filtered %>%
+  filter(newGroup == "super") %>%
+  pull(Angle)
+
+angles_all <- angles_filtered %>%
+  filter(newGroup == "all") %>%
+  pull(Angle)
+
+# ------------------------------------------------------------------------------
+# Perform a t-test to compare the mean angles between groups.
+# ------------------------------------------------------------------------------
+t_test_result <- t.test(angles_simple, angles_super,
+                        alternative = "two.sided",
+                        var.equal = FALSE)
+cat("T-test Results (Simple vs. Super):\n")
 print(t_test_result)
-sd(group_super)
 
-# F-test to compare variances
-var_test_result <- var.test(group_simple, group_super)
+# Calculate and print the standard deviation for the "super" group.
+sd_super <- sd(angles_super)
+cat("Standard Deviation (Super group):", sd_super, "\n\n")
+
+# ------------------------------------------------------------------------------
+# Perform an F-test to compare the variances between the "simple" and "super" groups.
+# ------------------------------------------------------------------------------
+var_test_result <- var.test(angles_simple, angles_super)
+cat("F-test Results (Simple vs. Super):\n")
 print(var_test_result)
 
-# Variance calculations for groups
-var_simple <- var(angles_filtered[angles_filtered$newGroup == 'simple', "Angle"])
-var_super <- var(angles_filtered[angles_filtered$newGroup == 'super', "Angle"])
-var_all <- var(angles_filtered[angles_filtered$newGroup == 'all', "Angle"])
+# ------------------------------------------------------------------------------
+# Calculate variance for each group and print the results.
+# ------------------------------------------------------------------------------
+variance_simple <- var(angles_simple)
+variance_super <- var(angles_super)
+variance_all <- var(angles_all)
 
-print(c(var_simple, var_super, var_all))
+cat("Variances:\n")
+cat("Simple group:", variance_simple, "\n")
+cat("Super group:", variance_super, "\n")
+cat("All group:", variance_all, "\n")
+
+
 
 
 
