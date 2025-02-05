@@ -11,37 +11,37 @@ This repository contains R scripts and data used for the analysis of a social co
 
 The repository is organized into the following directories and files:
 
-- **data/**  
+- **data**  
   The original data collected from an extensive literature survey.
 
-- **imputed_data/**  
+- **imputed_data**  
   Data after imputation of missing values using an iterative PCA method.
 
-- **tree/**  
+- **tree**  
   A phylogenetic tree containing 80 bee species.
 
-- **pca_scores/**  
+- **pca_scores**  
   Results of the phylogenetically corrected PCA used in downstream analyses.
 
-- **dimensionality_reduction/**  
+- **dimensionality_reduction**  
   Scripts for:
   - Data preprocessing
   - Imputation of missing data
   - Analysis of PCA and UMAP
   - Visualization of dimensionality reduction results
 
-- **phylosig_cor/**  
+- **phylosig_cor**  
   Scripts for:
   - Calculating correlations between traits
   - Hierarchical clustering
   - Estimating phylogenetic signal using Pagel's lambda and Blomberg's K
 
-- **evolutionary_routes/**  
+- **evolutionary_routes**  
   Scripts for:
   - Phylogenetic reconstruction
   - Analysis of adaptive regime shifts
 
-- **directionality/**  
+- **directionality**  
   Scripts for:
   - Analyzing directional evolution based on PCA values
   - Calculating phenotypic diversification rates
@@ -50,17 +50,7 @@ The repository is organized into the following directories and files:
 ---
 
 ## Getting Started
-
-1. **Data Preparation:**  
-   - The original dataset is located in the `data/` folder.
-   - For analyses that require imputed data, refer to the `imputed_data/` folder.
-
-2. **Phylogenetic and PCA Analyses:**  
-   - The phylogenetic tree is stored in the `tree/` folder.
-   - The PCA results used for downstream analyses are in the `pca_scores/` folder.
-
-3. **Analysis Scripts:**  
-   - Use the scripts in the `dimensionality_reduction/`, `phylosig_cor/`, `evolutionary_routes/`, and `directionality/` folders to reproduce the analyses presented in the manuscript.
+   - Use the scripts to reproduce the analyses presented in the manuscript.
 
 For detailed instructions on running each analysis, please refer to the header comments within the individual R scripts.
 
