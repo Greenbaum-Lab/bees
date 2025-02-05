@@ -10,6 +10,7 @@ library(svglite)
 library(stringr)
 library(tidyr)
 library(tibble)
+library(purrr)
 
 
 ################################################################################
@@ -208,207 +209,310 @@ ggplot() +
 # In this example, it is assumed that:
 #   - Columns 3 and 4 of 'lineage_df' contain PC data (used twice for PC1/PC2 and PC3/PC4).
 #   - Columns 5 and 6 of 'lineage_df' contain species and group data.
+# lineage_df12 <- lineage_df
+# lineage_df34 <- lineage_df
 # lineage_df_all <- cbind(
-#   lineage_df[, c(3, 4)],   # Assumed to be PC1 and PC2
-#   lineage_df[, c(3, 4)],   # Assumed to be PC3 and PC4 
-#   lineage_df[, c(5, 6)]    # Species and group information
+#   lineage_df12[, c(3, 4)],   # Assumed to be PC1 and PC2
+#   lineage_df34[, c(3, 4)],   # Assumed to be PC3 and PC4
+#   lineage_df12[, c(5, 6)]    # Species and group information
 # )
 # colnames(lineage_df_all) <- c("PC1", "PC2", "PC3", "PC4", "species", "group")
 
-############################################################
-################ directionality ############################
-# Calculate step size (branch length) of the evolutionary trajectory 
-#in the 4D phenotypic space
+
+################################################################################
+# Directionality Analysis in 4D Space
+# Computation of phenotypic diversification rate for species.
+# This script integrates phenotypic distances calculated from four principal
+# components (PCs) with phylogenetic branch lengths, replicates steps based on
+# branch lengths, and then adjusts step values based on a branching-time split.
+#################################################################################
 
 
+###############################
+## User–Defined Parameters
+###############################
+plotTree(phylo_tree); nodelabels()
+# Define which groups should be classified as "super"
+super_groups <- c("api", "bom", "mel")
 
-# arrange data based on the phylo group and species
-lineage_df_all <- lineage_df_all %>%
-  arrange(species) %>%
-  group_by(species) %>%
-  mutate(combined_group = ifelse(group %in% c("api", "bom", "mel"), "super", "simple"))
+# Define the root (starting) node for tree paths
+root_node <- 81
 
+# Replication multiplier used in the replication function
+rep_factor <- 10
 
+# Node used for splitting the groups being compared
+split_node <- "103"
 
+###############################
+## Data Preparation
+###############################
 
-# Initialize weights for each dimension
-weights <- c(28, 15, 13, 12)
-# weights <- c(1, 1, 1, 1)
-
-# Function to calculate the weighted Euclidean distance between two points
-calc_distance <- function(row1, row2, weights) {
-  # Calculate the squared differences multiplied by the weights
-  squared_diffs <- weights * (row1 - row2) ^ 2
-  # Return the square root of the sum of weighted squared differences
-  sqrt(sum(squared_diffs))
+# Function to arrange the data by species and add a combined group indicator.
+get_combined_pcs_df <- function(df, super_groups) {
+  df %>%
+    arrange(species) %>%
+    group_by(species) %>%
+    mutate(combined_group = ifelse(group %in% super_groups, "super", "simple")) %>%
+    ungroup()
 }
 
-# Function to calculate sequential weighted distances within a species group
-calc_sequential_distances <- function(species_data, weights) {
-  results <- tibble()  # Start with an empty tibble
-  
-  if (nrow(species_data) > 1) {
-    for (i in 1:(nrow(species_data) - 1)) {
-      # Compute weighted distance between consecutive rows
-      distance <- calc_weighted_distance(
-        species_data[i, c("PC1", "PC2", "PC3", "PC4")],
-        species_data[i+1, c("PC1", "PC2", "PC3", "PC4")],
-        weights
-      )
-      # Prepare a new row to add to the results tibble
-      new_row <- tibble(
-        FromRow = i,
-        ToRow = i + 1,
-        Distance = distance,
-        Group = species_data$group[i],
-        CombinedGroup = species_data$combined_group[i]
-      )
-      # Append the new row to the results
-      results <- bind_rows(results, new_row)
-    }
-  }
-  
-  return(results)
+# 'lineage_df_all' is assumed to be available in the workspace (contains PC1-4, species, group)
+combined_pcs_df <- get_combined_pcs_df(lineage_df_all, super_groups)
+
+###############################
+## Distance Calculations in 4D
+###############################
+
+# (A) Euclidean distance function between two points in 4D space.
+calc_distance <- function(point1, point2) {
+  sqrt(sum((point1 - point2)^2))
 }
 
+# (B) Compute sequential distances between rows.
+calc_sequential_distances <- function(species_data) {
+  species_data %>%
+    mutate(
+      Distance = sqrt((PC1 - lead(PC1))^2 +
+                        (PC2 - lead(PC2))^2 +
+                        (PC3 - lead(PC3))^2 +
+                        (PC4 - lead(PC4))^2),
+      FromRow = row_number(),
+      ToRow = row_number() + 1
+    ) %>%
+    filter(!is.na(Distance)) %>%
+    dplyr::select(FromRow, ToRow, Distance, group, combined_group)
+}
 
+# (C) Apply the sequential distance calculation by species and add a step index.
+get_distance_results <- function(df) {
+  df %>%
+    group_by(species) %>%
+    do(calc_sequential_distances(.)) %>%
+    ungroup() %>%
+    group_by(species) %>%
+    mutate(step_seq = row_number()) %>%
+    ungroup()
+}
 
-# Calculate sequential distances for each species, ensuring group values are tracked
-results <- demo %>%
-  group_by(species) %>%
-  group_modify(~ calc_sequential_distances(.x, weights)) %>%
-  ungroup()
+# Compute the sequential distance results from the combined PCs data.
+distance_results <- get_distance_results(combined_pcs_df)
 
-# Path calculation for species
-edge_matrix <- tree$edge
-edge_lengths <- tree$edge.length
+###############################
+## Tree Path Calculations
+###############################
 
-# Combine them into a new data frame
-combined_edge_matrix <- cbind(edge_matrix, edge_lengths)
-colnames(combined_edge_matrix) <- c("Parent", "Child", "Edge_Length")
+# (A) Prepare the combined edge matrix from the phylogenetic tree.
+get_combined_edge_matrix <- function(tree) {
+  edge_matrix <- tree$edge
+  edge_lengths <- tree$edge.length
+  combined_edge_matrix <- cbind(edge_matrix, edge_lengths)
+  colnames(combined_edge_matrix) <- c("Parent", "Child", "Edge_Length")
+  combined_edge_matrix
+}
 
-# Initialize an empty list for storing species path data frames
-species_paths_df_list <- vector("list", length(tree$tip.label))
+combined_edge_matrix <- get_combined_edge_matrix(phylo_tree)
 
-# Function to calculate the path for each species
-calculate_path <- function(species_index, tree, combined_edge_matrix) {
-  # Find the node path from the root to the current species
-  path <- nodepath(tree, from = 81, to = species_index)  # Adjust 'from' as needed
+# (B) For each species (tip), compute its evolutionary path (set of edges)
+#     from the specified root node to the tip.
+calculate_path <- function(species_index, tree, combined_edge_matrix, root_node) {
+  # Get the node path from the specified root to the species tip.
+  path <- nodepath(tree, from = root_node, to = species_index)
   
-  # Corresponding rows in the combined_edge_matrix for each segment in the path
+  # For each consecutive pair in the path, find the matching row in the edge matrix.
   path_rows <- sapply(1:(length(path) - 1), function(j) {
-    which(combined_edge_matrix[, "Parent"] == path[j] & combined_edge_matrix[, "Child"] == path[j + 1])
+    which(combined_edge_matrix[, "Parent"] == path[j] & 
+            combined_edge_matrix[, "Child"] == path[j + 1])
   })
   
-  # Extract edge lengths for this path
+  # Extract and transpose the edge lengths, naming the columns as Edge_1, Edge_2, ...
   path_edge_lengths <- combined_edge_matrix[path_rows, "Edge_Length"]
-  
-  # Create a data frame for this species path
-  species_path_df <- setNames(as.data.frame(t(path_edge_lengths)), paste("Edge", seq_along(path_edge_lengths), sep = "_"))
-  
-  return(species_path_df)
+  setNames(as.data.frame(t(path_edge_lengths)), 
+           paste("Edge", seq_along(path_edge_lengths), sep = "_"))
 }
 
-# Calculate paths for each species and find the maximum path length
-species_paths_df_list <- lapply(seq_along(tree$tip.label), calculate_path, tree, combined_edge_matrix)
-max_path_length <- max(sapply(species_paths_df_list, ncol))
+# (C) Compute the evolutionary path for each species (tip) and store in a list.
+get_species_paths_list <- function(tree, combined_edge_matrix, root_node) {
+  lapply(seq_along(tree$tip.label), function(idx) {
+    calculate_path(species_index = idx, tree = tree, 
+                   combined_edge_matrix = combined_edge_matrix, 
+                   root_node = root_node)
+  })
+}
 
-# Adjust all data frames to have the same number of columns
-species_paths_df_list <- lapply(species_paths_df_list, function(df) {
-  num_missing_cols <- max_path_length - ncol(df)
-  if (num_missing_cols > 0) {
-    missing_cols <- setNames(matrix(NA, nrow = 1, ncol = num_missing_cols), paste("Edge", (ncol(df) + 1):max_path_length, sep = "_"))
-    return(cbind(df, missing_cols))
-  } else {
-    return(df)
-  }
-})
+species_paths_list <- get_species_paths_list(phylo_tree, combined_edge_matrix, root_node)
 
-# Ensure all data frames in the list have the same column names
-max_cols <- max(sapply(species_paths_df_list, ncol))  # Maximum number of columns in any data frame
-col_names <- paste("Edge", 1:max_cols, sep = "_")  # Create column names
+# (D) Standardize the number of edge columns across species.
+standardize_species_paths <- function(species_paths_list) {
+  max_path_length <- max(sapply(species_paths_list, ncol))
+  col_names <- paste("Edge", 1:max_path_length, sep = "_")
+  
+  species_paths_list <- lapply(species_paths_list, function(df) {
+    num_missing_cols <- max_path_length - ncol(df)
+    if (num_missing_cols > 0) {
+      missing_cols <- setNames(matrix(NA, nrow = 1, ncol = num_missing_cols),
+                               paste("Edge", (ncol(df) + 1):max_path_length, sep = "_"))
+      df <- cbind(df, missing_cols)
+    }
+    # Ensure consistent column names and order.
+    missing_cols <- setdiff(col_names, colnames(df))
+    if (length(missing_cols) > 0) {
+      df[missing_cols] <- matrix(NA, nrow = nrow(df), ncol = length(missing_cols))
+    }
+    df[, col_names, drop = FALSE]
+  })
+  
+  list(species_paths_list = species_paths_list, col_names = col_names)
+}
 
-species_paths_df_list <- lapply(species_paths_df_list, function(df) {
-  missing_cols <- setdiff(col_names, colnames(df))
-  if (length(missing_cols) > 0) {
-    # Add missing columns as NA
-    df[missing_cols] <- matrix(NA, nrow = nrow(df), ncol = length(missing_cols))
-  }
-  df <- df[, col_names]  # Ensure consistent column order
-  return(df)
-})
+standardized_paths <- standardize_species_paths(species_paths_list)
+species_paths_list <- standardized_paths$species_paths_list
 
-# Now combine all species paths into a single data frame
-all_species_paths_df <- do.call(rbind, species_paths_df_list)
-rownames(all_species_paths_df) <- tree$tip.label  # Set row names
+# (E) Combine the species paths into one data frame and convert to long format.
+get_species_edge_df <- function(species_paths_list, tree) {
+  all_species_paths_df <- do.call(rbind, species_paths_list)
+  rownames(all_species_paths_df) <- tree$tip.label
+  
+  species_edge_df <- all_species_paths_df %>%
+    tibble::rownames_to_column(var = "species") %>%
+    pivot_longer(
+      cols = starts_with("Edge_"),
+      names_to = "edge",
+      values_to = "edge_length"
+    ) %>%
+    filter(!is.na(edge_length)) %>%  # Remove missing edge lengths.
+    group_by(species) %>%
+    mutate(step_seq = row_number()) %>%
+    ungroup()
+  
+  species_edge_df
+}
 
-# Vectorized approach to create all_lengths_vector
-all_lengths_vector <- unlist(lapply(seq_len(nrow(all_species_paths_df)), function(i) {
-  na.omit(unlist(all_species_paths_df[i, ]))
-}))
+species_edge_df <- get_species_edge_df(species_paths_list, phylo_tree)
 
-# Adding the vector to the existing data frame
-new <- cbind(results, all_lengths_vector)
+###############################
+## Combine Phenotypic & Phylogenetic Data
+###############################
 
-# Convert species to character and rounding edge_length
-names(new)[names(new) == "all_lengths_vector"] <- "edge_length"
-new$species <- as.character(new$species)
+# Merge the sequential phenotypic distance results with the corresponding edge data.
+combine_distance_edge_data <- function(distance_results, species_edge_df) {
+  left_join(distance_results, species_edge_df, by = c("species", "step_seq")) %>%
+    mutate(step = Distance / edge_length)
+}
 
-# Renaming and creating new columns
-new <- transform(new, step = Distance / edge_length)
+combined_results <- combine_distance_edge_data(distance_results, species_edge_df)
 
-# Optimized replicate_steps_with_group function
-replicate_steps_with_group <- function(species_id, df) {
+# Replicate each row of the data frame based on the product of edge_length and rep_factor.
+# This allows a consistent number of data points for each species, 
+# regrdless of the amount of edges it has.
+replicate_steps_with_group <- function(species_id, df, rep_factor) {
   species_data <- subset(df, species == species_id)
-  return(with(species_data, data.frame(
+  with(species_data, data.frame(
     species = species_id,
-    group = rep(Group, edge_length*10),
-    combined_group = rep(CombinedGroup, edge_length*10),
-    step = rep(step, edge_length*10)
-  )))
+    group = rep(group, times = round(edge_length * rep_factor)),
+    combined_group = rep(combined_group, times = round(edge_length * rep_factor)),
+    step = rep(step, times = round(edge_length * rep_factor))
+  ))
 }
 
-new_df <- do.call(rbind, lapply(unique(new$species), function(species_id) replicate_steps_with_group(species_id, new)))
+replicated_steps_df <- do.call(rbind, lapply(unique(combined_results$species), 
+                                             replicate_steps_with_group, 
+                                             df = combined_results, rep_factor = rep_factor))
+
+###############################
+## Sequence Split & Step Adjustment
+###############################
+
+# Adjust the step values based on a branch time split.
+adjust_steps_based_on_split <- function(replicated_df, tree, split_node) {
+  # Compute the split value from the branching times.
+  bt <- branching.times(tree)
+  split_value <- (round(100 - bt[split_node], 1)) * 10
+  
+  # Add a sequence number for each species and remove duplicate step values.
+  df <- replicated_df %>%
+    group_by(species) %>%
+    mutate(sequence = row_number()) %>%
+    ungroup() %>%
+    group_by(sequence) %>%
+    filter(!duplicated(step)) %>%
+    ungroup()
+  
+  # Compute average step size for sequences up to the split value.
+  avg_by_sequence <- df %>%
+    filter(sequence <= split_value) %>%
+    group_by(sequence) %>%
+    summarize(average_step = mean(step, na.rm = TRUE), .groups = 'drop')
+  
+  # Update step values for sequences below or equal to the split value.
+  left_join(df, avg_by_sequence, by = "sequence") %>%
+    mutate(step = ifelse(sequence <= split_value, average_step, step)) %>%
+    dplyr::select(-average_step)
+}
+
+result_df <- adjust_steps_based_on_split(replicated_steps_df, phylo_tree, split_node)
+
+###############################
+## Summarize & Plot
+###############################
+
+# Summarize average step sizes by combined group and sequence, then plot the results.
+summarize_and_plot <- function(result_df) {
+  avg_step_df <- result_df %>%
+    group_by(combined_group, sequence) %>%
+    summarize(avg_step = mean(step), .groups = 'drop')
+  
+  p <- ggplot(avg_step_df, aes(x = sequence, y = avg_step, 
+                               group = combined_group, color = combined_group)) +
+    geom_line() +
+    theme_minimal() +
+    labs(x = "Sequence", y = "Average Step Size", color = "Combined Group")
+  
+  # Save the plot as an SVG file. Adjust dimensions and file path as needed.
+  ggsave("steps_scale.svg", p, width = 18, height = 10, dpi = 300)
+  
+  p  # Return the plot object if further modifications are needed.
+}
+
+plot_obj <- summarize_and_plot(result_df)
 
 
-#find the split of the HB BB SB
-# plotTree(tree);nodelabels()
 
-# Adjust to node number and calculate sequence
-split <- (round(100 - branching.times(tree)["103"][1], 1)) * 10
 
-new_df <- new_df %>%
-  group_by(species) %>%
-  mutate(sequence = row_number()) %>%
-  ungroup()
 
-# Filter and summarize by sequence
-filtered_df <- new_df %>%
-  group_by(sequence) %>%
-  filter(!duplicated(step)) %>%
-  ungroup()
 
-all_species <- filtered_df %>%
-  filter(sequence <= split) %>%
-  group_by(sequence) %>%
-  summarize(average_step = mean(step, na.rm = TRUE))
 
-# Update the step values based on sequence
-result_df <- left_join(filtered_df, all_species, by = "sequence") %>%
-  mutate(step = ifelse(sequence <= split, average_step, step)) %>%
-  select(-average_step)
 
-# Summary and plotting
-avg_step_df <- result_df %>%
-  group_by(combined_group, sequence) %>%
-  summarize(avg_step = mean(step), .groups = 'drop')
 
-p=ggplot(avg_step_df, aes(x = sequence, y = avg_step, group = combined_group, color = combined_group)) +
-  geom_line() +
-  theme_minimal() +
-  labs(x = "Sequence", y = "Average Step Size", color = "Combined Group")
 
-ggsave("steps_scale.svg", p, width = 18,height = 10,dpi = 300)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
