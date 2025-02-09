@@ -50,6 +50,18 @@ The repository is organized into the following directories and files:
   - Calculating phenotypic diversification rates
   - Evaluating turn angles in evolutionary trajectories
 
+- **supplementary_figures**  
+  Scripts for:
+  - Principal Component Analysis (PCA) of four PCs.
+  - UMAP dimensionality reduction and plotting for multiple parameters.
+  - Ancestral state reconstruction of four PCs.
+
+- **sensitivity_analyses**  
+  Scripts for:
+  - Confidence ellipses using leave-one-out PCA.
+  - Testing for taxonomic sampling bias.
+  - Phylogenetic tree sensitivity by sampling alternative trees.
+
 ---
 
 ## Getting Started
