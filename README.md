@@ -22,6 +22,9 @@ The repository is organized into the following directories and files:
 
 - **pca_scores**  
   Results of the phylogenetically corrected PCA used in downstream analyses.
+  
+- **reconstruced_data**  
+  Data of ancetral state reconstrion including internal nodes. used in directionality and phenotypic diversifcation analyses.
 
 - **dimensionality_reduction**  
   Scripts for:
