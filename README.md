@@ -1,6 +1,11 @@
 # Analysis of Social Complexity Dataset
 
-This repository contains R scripts and data used for the analysis of a social complexity dataset as described in Peled et al. (2025). If you have any questions or need assistance, please contact:
+This repository contains R scripts and data used for the analysis of a social complexity dataset as described in Peled et al. (2025). 
+
+The full article can be found in:
+https://doi.org/10.1016/j.cub.2025.01.009
+
+If you have any questions or need assistance, please contact:
 
 **Ohad Peled**  
 [ohad.peled@mail.huji.ac.il](mailto:ohad.peled@mail.huji.ac.il)
