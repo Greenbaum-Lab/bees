@@ -80,3 +80,4 @@ For detailed instructions on running each analysis, please refer to the header c
 
 If you use this data or any of the code in your research, please cite the following:
 
+Peled, O., Greenbaum, G., & Bloch, G. (2025). Diversification of social complexity following a major evolutionary transition in bees. Current Biology, 35(5), 981-993.
